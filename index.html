@@ -5,179 +5,172 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#05000f">
 <title>মায়াবী শুভেচ্ছা</title>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&display=swap');
-
 *{box-sizing:border-box}
-html,body{margin:0;width:100%;min-height:100%;font-family:"Noto Sans Bengali",sans-serif}
+html,body{margin:0;min-height:100%;font-family:"Noto Sans Bengali",sans-serif}
 body{
- overflow-x:hidden;color:#fff;
- background:
- radial-gradient(circle at 18% 12%,rgba(159,91,255,.28),transparent 24%),
- radial-gradient(circle at 84% 22%,rgba(0,224,255,.18),transparent 25%),
- radial-gradient(circle at 50% 90%,rgba(255,51,174,.18),transparent 28%),
- #04020c;
+  overflow-x:hidden;color:#18202b;
+  background:
+    radial-gradient(circle at 10% 15%,#fff7cf 0,transparent 24%),
+    radial-gradient(circle at 90% 18%,#e6f8ff 0,transparent 26%),
+    radial-gradient(circle at 50% 100%,#ffe9f6 0,transparent 28%),
+    #f8fbff;
 }
 canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
-.bg-orb{position:fixed;border-radius:50%;filter:blur(2px);pointer-events:none;z-index:1}
-.o1{width:180px;height:180px;left:-80px;top:20%;background:radial-gradient(circle,#b14cff55,transparent 70%);animation:orb1 7s ease-in-out infinite}
-.o2{width:220px;height:220px;right:-100px;top:48%;background:radial-gradient(circle,#00d9ff44,transparent 70%);animation:orb2 9s ease-in-out infinite}
-.o3{width:160px;height:160px;left:35%;bottom:-80px;background:radial-gradient(circle,#ff3db755,transparent 70%);animation:orb3 8s ease-in-out infinite}
-@keyframes orb1{50%{transform:translate(55px,-40px) scale(1.2)}}
-@keyframes orb2{50%{transform:translate(-45px,30px) scale(1.25)}}
-@keyframes orb3{50%{transform:translate(20px,-55px) scale(1.15)}}
+.page{position:relative;z-index:3;width:min(920px,100%);margin:auto;padding:10px 12px 45px}
+.top{height:30px;display:flex;justify-content:center;align-items:center}
+.top span{
+  padding:5px 14px;border-radius:999px;color:#596274;font-size:10px;
+  background:#ffffffc9;border:1px solid #dfe7f2;box-shadow:0 8px 24px #6d7d9612;
+  backdrop-filter:blur(14px)
+}
 
-.page{position:relative;z-index:3;width:min(900px,100%);margin:auto;padding:18px 14px 50px;min-height:100vh}
-.top{
- height:34px;display:flex;justify-content:center;align-items:center;
- color:#cfc5e9;font-size:11px;letter-spacing:.8px
+/* FIRE / MAGIC RIM */
+.magic-stage{width:min(760px,100%);position:relative;padding:10px}
+.magic-stage:before,.magic-stage:after{
+  content:"";position:absolute;inset:-12px;border-radius:48px;
+  background:conic-gradient(from 0deg,#ffb300,#ff4d8d,#8d5cff,#00c8ff,#52e68b,#ffd45c,#ff4d8d);
+  filter:blur(18px);opacity:.50;animation:rimspin 6s linear infinite
 }
-.top span{padding:7px 14px;border:1px solid #ffffff18;border-radius:99px;background:#ffffff06;backdrop-filter:blur(12px)}
-
-.reveal{
- min-height:calc(100vh - 52px);display:grid;place-items:center;
- padding:15px 0 45px
-}
-.magic-stage{width:min(720px,100%);position:relative}
-.magic-stage:before{
- content:"";position:absolute;inset:-32px;border-radius:55px;
- background:conic-gradient(from 0deg,#00eaff55,#8b5cf655,#ff3db755,#ffd45b55,#00eaff55);
- filter:blur(30px);animation:spin 8s linear infinite
-}
-@keyframes spin{to{transform:rotate(360deg)}}
+.magic-stage:after{inset:-4px;filter:blur(7px);opacity:.28;animation:rimspin 3.8s linear infinite reverse}
+@keyframes rimspin{to{transform:rotate(360deg)}}
 
 .magic-card{
- position:relative;min-height:520px;border-radius:42px;overflow:hidden;
- display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
- padding:45px 24px;
- background:
- radial-gradient(circle at 50% 45%,#a56bff1f,transparent 38%),
- linear-gradient(145deg,#17102fdd,#071827dd 55%,#17071ddd);
- border:1px solid #ffffff2c;
- box-shadow:0 35px 100px #00000080,inset 0 1px #ffffff35;
- backdrop-filter:blur(25px);
- transform-style:preserve-3d;
+  position:relative;min-height:520px;border-radius:40px;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:45px 25px;background:
+    radial-gradient(circle at 50% 30%,#fff 0,#ffffff 42%,#f4f8ff 72%,#eaf2ff 100%);
+  border:2px solid #ffffff;box-shadow:
+    0 35px 90px #5c78a51c,0 0 0 1px #cfd9e7,
+    inset 0 1px 0 #fff, inset 0 -18px 45px #dce8f855;
+  transform-style:preserve-3d
 }
 .magic-card:before{
- content:"";position:absolute;inset:12px;border:1px solid #ffffff12;border-radius:34px;
- pointer-events:none
+  content:"";position:absolute;inset:12px;border-radius:32px;
+  border:1px solid #ffffff;box-shadow:inset 0 0 0 1px #dfe9f6;
+  pointer-events:none
 }
 .magic-card:after{
- content:"";position:absolute;width:170%;height:45px;left:-35%;top:25%;
- background:linear-gradient(90deg,transparent,#ffffff15,transparent);
- transform:rotate(-18deg);animation:sweep 5s ease-in-out infinite;pointer-events:none
+  content:"";position:absolute;width:160%;height:55px;left:-30%;top:15%;
+  background:linear-gradient(90deg,transparent,#ffffffdd,transparent);
+  transform:rotate(-18deg);animation:sweep 4.5s ease-in-out infinite
 }
-@keyframes sweep{0%,55%{transform:translateX(-45%) rotate(-18deg)}100%{transform:translateX(45%) rotate(-18deg)}}
+@keyframes sweep{0%,50%{transform:translateX(-55%) rotate(-18deg)}100%{transform:translateX(55%) rotate(-18deg)}}
+
+/* animated flame-like particles around the card */
+.flame{position:absolute;bottom:6%;width:8px;height:28px;border-radius:60% 40% 55% 45%;
+  background:linear-gradient(#fff4a3,#ffb300 45%,#ff4d6d);
+  filter:blur(.2px);box-shadow:0 0 16px #ff9d00aa,0 0 32px #ff4d6d55;
+  animation:flameUp var(--t) ease-in-out infinite;opacity:.8
+}
+@keyframes flameUp{
+  0%{transform:translateY(25px) scale(.6) rotate(-8deg);opacity:0}
+  20%{opacity:.9}
+  55%{transform:translateY(-100px) translateX(var(--x)) scale(1.15) rotate(12deg)}
+  100%{transform:translateY(-210px) translateX(calc(var(--x)*1.6)) scale(.25) rotate(-15deg);opacity:0}
+}
+.spark{position:absolute;width:5px;height:5px;border-radius:50%;background:#fff;
+  box-shadow:0 0 12px #fff,0 0 22px var(--c);animation:spark 2.5s ease-in-out infinite
+}
+@keyframes spark{50%{transform:translate(var(--dx),var(--dy)) scale(1.8);opacity:.35}}
 
 .gem{
- width:104px;height:104px;border-radius:50%;display:grid;place-items:center;
- margin-bottom:24px;
- background:radial-gradient(circle at 35% 28%,#fff 0 3%,transparent 4%),
- radial-gradient(circle,#fff5b7 0 8%,#ffd35d 9% 23%,#a15cff 42%,#28144f 63%,#05020f 72%);
- box-shadow:0 0 30px #ffd35d66,0 0 90px #9c5cff55,inset 0 2px 10px #fff8;
- animation:gem 2.7s ease-in-out infinite;
+ width:100px;height:100px;border-radius:50%;display:grid;place-items:center;margin-bottom:22px;
+ background:radial-gradient(circle at 34% 25%,#fff 0 5%,transparent 6%),
+ radial-gradient(circle,#fff8cf 0 13%,#ffd45a 14% 30%,#ff74bb 31% 44%,#8e67ff 45% 60%,#fff 61% 67%,#dce9ff 68%);
+ box-shadow:0 0 25px #ffd45a66,0 0 60px #ff6fb855,0 0 100px #6bdcff35;
+ animation:gem 2.6s ease-in-out infinite
 }
-.gem b{font-size:42px;filter:drop-shadow(0 5px 12px #0006)}
-@keyframes gem{50%{transform:translateY(-9px) scale(1.08) rotate(7deg);box-shadow:0 0 48px #ffd35d88,0 0 110px #9c5cff77}}
+.gem b{font-size:40px;filter:drop-shadow(0 6px 10px #8996a955)}
+@keyframes gem{50%{transform:translateY(-8px) rotate(8deg) scale(1.07)}}
 
-.mini{font-size:12px;color:#ffd96c;font-weight:800;letter-spacing:1.3px}
+.mini{font-size:12px;color:#c27700;font-weight:900;letter-spacing:1px}
 .gate-title{
- margin:12px 0 12px;font-size:clamp(30px,7vw,58px);line-height:1.12;font-weight:900;
- background:linear-gradient(90deg,#fff,#ffd66b,#ff64cf,#62efff,#fff);
+ margin:11px 0;font-size:clamp(30px,7vw,57px);line-height:1.13;font-weight:900;
+ background:linear-gradient(90deg,#202a3a,#b36b00,#e83d86,#5b55d6,#009ac2,#202a3a);
  background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;
- animation:gradient 5s linear infinite
+ animation:gradient 6s linear infinite
 }
 @keyframes gradient{to{background-position:300%}}
-.gate-text{max-width:560px;color:#c9c1db;line-height:1.9;font-size:14px;margin:0 0 26px}
+.gate-text{max-width:590px;color:#687487;line-height:1.9;font-size:14px;margin:0 0 24px}
 .open-btn{
- border:0;border-radius:999px;padding:16px 28px;font-weight:900;color:#17091e;
- background:linear-gradient(135deg,#ffd76b,#ff83d8 48%,#64efff);
- box-shadow:0 15px 40px #ff4fcf38,inset 0 2px #fff9;
- transition:.25s;position:relative;overflow:hidden
+ position:relative;border:0;border-radius:999px;padding:16px 28px;font-family:inherit;font-weight:900;
+ color:#fff;background:linear-gradient(135deg,#ff9f00,#ff4d8d 48%,#6656e8);
+ box-shadow:0 16px 35px #ff638b35,inset 0 2px #fff9;overflow:hidden;transition:.25s
 }
 .open-btn:hover{transform:translateY(-4px) scale(1.03)}
-.open-btn:after{content:"";position:absolute;inset:-30px -80px;background:#fff7;transform:translateX(-130%) rotate(18deg);animation:btnshine 3.2s infinite}
+.open-btn:after{content:"";position:absolute;inset:-30px -80px;background:#fff9;transform:translateX(-130%) rotate(18deg);animation:btnshine 3s infinite}
 @keyframes btnshine{65%,100%{transform:translateX(130%) rotate(18deg)}}
-.small{margin-top:16px;color:#7f769b;font-size:10px}
+.small{margin-top:13px;color:#9aa5b5;font-size:10px}
 
 .hidden{display:none!important}
-#gift{animation:appear .9s cubic-bezier(.16,.9,.2,1)}
-@keyframes appear{from{opacity:0;transform:scale(.9) translateY(35px)}to{opacity:1;transform:none}}
-
-.wish{
- min-height:calc(100vh - 70px);display:flex;flex-direction:column;align-items:center;
- justify-content:center;text-align:center;padding:35px 6px 50px;position:relative
-}
+#gift{animation:appear .85s cubic-bezier(.16,.9,.2,1)}
+@keyframes appear{from{opacity:0;transform:scale(.94) translateY(30px)}to{opacity:1;transform:none}}
+.wish{min-height:calc(100vh - 45px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:35px 4px 45px}
 .date{
- display:inline-flex;padding:8px 14px;border-radius:999px;color:#dcd5ea;
- background:#ffffff0b;border:1px solid #ffffff20;backdrop-filter:blur(15px);font-size:12px
+ display:inline-flex;padding:8px 15px;border-radius:999px;color:#657184;font-size:11px;
+ background:#ffffffdf;border:1px solid #dce5f0;box-shadow:0 10px 28px #60748b18
 }
 .festival{
- margin:20px 0 5px;font-size:clamp(34px,8vw,70px);line-height:1.08;font-weight:900;
- background:linear-gradient(90deg,#fff,#ffd86b,#ff63d0,#62ecff,#fff);
- background-size:300%;-webkit-background-clip:text;color:transparent;
- animation:gradient 6s linear infinite;text-shadow:0 0 35px #ff66cc18
+ margin:18px 0 5px;font-size:clamp(35px,8vw,72px);line-height:1.08;font-weight:900;
+ background:linear-gradient(90deg,#202a3a,#e09b00,#e94c9b,#675be8,#009fc4,#202a3a);
+ background-size:300%;-webkit-background-clip:text;color:transparent;animation:gradient 6s linear infinite
 }
-.subtitle{color:#aaa2c0;font-size:13px;margin-bottom:22px}
+.subtitle{color:#7b8798;font-size:13px;margin-bottom:21px}
 .poem{
- width:min(720px,100%);position:relative;padding:31px 22px;
- border-radius:32px;background:linear-gradient(145deg,#ffffff0d,#ffffff03);
- border:1px solid #ffffff1d;box-shadow:0 30px 80px #00000050,inset 0 1px #ffffff18;
- backdrop-filter:blur(20px)
+ width:min(750px,100%);position:relative;padding:34px 24px;border-radius:34px;
+ background:linear-gradient(145deg,#ffffffef,#f9fbffef);
+ border:1px solid #dbe4ef;box-shadow:
+ 0 30px 75px #5169871c,0 0 0 5px #ffffffaa,inset 0 1px #fff;
+ backdrop-filter:blur(18px);overflow:hidden
 }
-.poem:before,.poem:after{
- position:absolute;font:900 80px Georgia;color:#ffd66b33;line-height:1
+.poem:before{
+ content:"";position:absolute;inset:0;background:
+ radial-gradient(circle at 8% 20%,#ffd86b35 0 7%,transparent 8%),
+ radial-gradient(circle at 92% 30%,#ff66bb30 0 7%,transparent 8%),
+ radial-gradient(circle at 50% 110%,#63dcff28 0 18%,transparent 19%);
+ pointer-events:none
 }
-.poem:before{content:"“";left:12px;top:-5px}
-.poem:after{content:"”";right:12px;bottom:-28px}
-.sender{display:block;color:#ffd66b;font-weight:800;font-size:15px;margin-bottom:13px}
+.poem:after{
+ content:"";position:absolute;left:8%;right:8%;top:0;height:3px;border-radius:99px;
+ background:linear-gradient(90deg,#ffd45b,#ff5da8,#6659e8,#00b9dc,#ffd45b);
+ background-size:300%;animation:gradient 5s linear infinite
+}
+.sender{display:block;position:relative;z-index:1;color:#b36b00;font-weight:900;font-size:15px;margin-bottom:12px}
 .poemtext{
- color:#ff86db;font-size:clamp(19px,4vw,29px);font-weight:800;line-height:1.9;
- text-shadow:0 0 25px #ff45cc22
+ position:relative;z-index:1;color:#333d4d;font-size:clamp(19px,4vw,29px);
+ font-weight:700;line-height:1.95;text-shadow:0 1px #fff
 }
-.share-area{
- width:min(600px,100%);margin-top:30px;padding:0 2px
-}
-.share-title{font-size:17px;font-weight:800;margin-bottom:10px}
-.share-help{font-size:11px;color:#8e87a4;margin-bottom:13px}
+.share-area{width:min(600px,100%);margin-top:28px}
+.share-title{font-size:17px;font-weight:900;color:#273244;margin-bottom:9px}
+.share-help{font-size:11px;color:#8b96a6;margin-bottom:12px}
 .input{
- width:100%;height:54px;border-radius:17px;border:1px solid #ffffff1d;outline:none;
- background:#ffffff09;color:#fff;padding:0 17px;text-align:center;font-family:inherit;
- box-shadow:inset 0 1px #ffffff10,0 15px 45px #00000020
+ width:100%;height:55px;border-radius:17px;border:1px solid #d9e2ee;outline:none;
+ background:#ffffff;color:#303b4d;padding:0 17px;text-align:center;font-family:inherit;
+ box-shadow:0 13px 35px #60748b15,inset 0 1px #fff
 }
-.input::placeholder{color:#77708d}
-.input:focus{border-color:#61edff;box-shadow:0 0 0 4px #61edff13,0 15px 45px #00000025}
+.input::placeholder{color:#a1a9b5}
+.input:focus{border-color:#7a68ea;box-shadow:0 0 0 4px #7868ea12,0 15px 35px #60748b20}
 .whatsapp{
- width:100%;height:54px;margin-top:10px;border:0;border-radius:17px;font-weight:900;
- color:#062115;background:linear-gradient(135deg,#6df5ad,#4fe8dc);
- box-shadow:0 15px 35px #34d39930,inset 0 2px #fff9;transition:.22s
+ width:100%;height:55px;margin-top:10px;border:0;border-radius:17px;font-family:inherit;font-weight:900;
+ color:#fff;background:linear-gradient(135deg,#18b96d,#00a9a0);
+ box-shadow:0 15px 35px #18b96d25,inset 0 2px #fff9;transition:.22s
 }
-.whatsapp:disabled{opacity:.28;filter:grayscale(1);box-shadow:none}
+.whatsapp:disabled{opacity:.35;filter:grayscale(1);box-shadow:none}
 .whatsapp:not(:disabled):hover{transform:translateY(-3px)}
-.footer{margin-top:26px;color:#746c87;font-size:10px}
-
-.floating{
- position:fixed;z-index:5;pointer-events:none;opacity:.8;animation:float 5s ease-in-out infinite
-}
-.f1{left:5%;top:25%}.f2{right:6%;top:17%;animation-delay:-2s}.f3{left:9%;bottom:20%;animation-delay:-3s}.f4{right:10%;bottom:27%;animation-delay:-1s}
-@keyframes float{50%{transform:translateY(-25px) rotate(18deg) scale(1.15)}}
-
+.footer{margin-top:22px;color:#8f99a9;font-size:10px}
 #toast{position:fixed;left:50%;bottom:18px;transform:translate(-50%,30px);opacity:0;z-index:30;
- padding:11px 17px;border-radius:99px;background:#fff;color:#12061c;font-size:12px;font-weight:800;
- box-shadow:0 18px 45px #0008;transition:.3s;pointer-events:none}
+padding:11px 17px;border-radius:99px;background:#202a3a;color:#fff;font-size:12px;font-weight:800;transition:.3s}
 #toast.show{opacity:1;transform:translate(-50%,0)}
-
 @media(max-width:600px){
- .page{padding:10px 9px 35px}
- .magic-card{min-height:560px;padding:35px 18px;border-radius:34px}
- .magic-card:before{inset:9px;border-radius:27px}
- .gem{width:86px;height:86px}.gem b{font-size:35px}
- .gate-text{font-size:13px}
- .wish{min-height:calc(100vh - 45px)}
- .poem{padding:27px 16px;border-radius:27px}
- .poemtext{font-size:18px}
+ .page{padding:7px 8px 30px}.magic-card{min-height:555px;padding:35px 18px;border-radius:34px}
+ .magic-card:before{inset:9px;border-radius:27px}.gem{width:84px;height:84px}.gem b{font-size:34px}
+ .gate-text{font-size:13px}.poem{padding:28px 16px;border-radius:28px}.poemtext{font-size:18px}
 }
 </style>
+
 </head>
 <body>
 <canvas id="stars"></canvas>
@@ -190,6 +183,7 @@ canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:no
   <section id="gate" class="reveal">
     <div class="magic-stage">
       <div class="magic-card">
+<i class="flame" style="left:8.0%;--x:-20px;--t:2.2s;animation-delay:-0.0s"></i><i class="flame" style="left:12.2%;--x:-13px;--t:2.5500000000000003s;animation-delay:-0.42s"></i><i class="flame" style="left:16.4%;--x:-6px;--t:2.9000000000000004s;animation-delay:-0.84s"></i><i class="flame" style="left:20.6%;--x:1px;--t:3.25s;animation-delay:-1.26s"></i><i class="flame" style="left:24.8%;--x:8px;--t:3.6s;animation-delay:-1.68s"></i><i class="flame" style="left:29.0%;--x:15px;--t:2.2s;animation-delay:-2.1s"></i><i class="flame" style="left:33.2%;--x:22px;--t:2.5500000000000003s;animation-delay:-0.0s"></i><i class="flame" style="left:37.400000000000006%;--x:-20px;--t:2.9000000000000004s;animation-delay:-0.42s"></i><i class="flame" style="left:41.6%;--x:-13px;--t:3.25s;animation-delay:-0.84s"></i><i class="flame" style="left:45.800000000000004%;--x:-6px;--t:3.6s;animation-delay:-1.26s"></i><i class="flame" style="left:50.0%;--x:1px;--t:2.2s;animation-delay:-1.68s"></i><i class="flame" style="left:54.2%;--x:8px;--t:2.5500000000000003s;animation-delay:-2.1s"></i><i class="flame" style="left:58.400000000000006%;--x:15px;--t:2.9000000000000004s;animation-delay:-0.0s"></i><i class="flame" style="left:62.6%;--x:22px;--t:3.25s;animation-delay:-0.42s"></i><i class="flame" style="left:66.80000000000001%;--x:-20px;--t:3.6s;animation-delay:-0.84s"></i><i class="flame" style="left:71.0%;--x:-13px;--t:2.2s;animation-delay:-1.26s"></i><i class="flame" style="left:75.2%;--x:-6px;--t:2.5500000000000003s;animation-delay:-1.68s"></i><i class="flame" style="left:79.4%;--x:1px;--t:2.9000000000000004s;animation-delay:-2.1s"></i><i class="flame" style="left:83.60000000000001%;--x:8px;--t:3.25s;animation-delay:-0.0s"></i><i class="flame" style="left:87.8%;--x:15px;--t:3.6s;animation-delay:-0.42s"></i><i class="spark" style="left:5%;top:8%;--dx:-18px;--dy:-25px;--c:#ffd45b;animation-delay:-0.0s"></i><i class="spark" style="left:10%;top:25%;--dx:-12px;--dy:-33px;--c:#ff5da8;animation-delay:-0.3s"></i><i class="spark" style="left:15%;top:42%;--dx:-6px;--dy:-41px;--c:#6659e8;animation-delay:-0.6s"></i><i class="spark" style="left:20%;top:59%;--dx:0px;--dy:-49px;--c:#00b9dc;animation-delay:-0.8999999999999999s"></i><i class="spark" style="left:25%;top:76%;--dx:6px;--dy:-57px;--c:#52d98b;animation-delay:-1.2s"></i><i class="spark" style="left:30%;top:11%;--dx:12px;--dy:-25px;--c:#ffd45b;animation-delay:-0.0s"></i><i class="spark" style="left:35%;top:28%;--dx:18px;--dy:-33px;--c:#ff5da8;animation-delay:-0.3s"></i><i class="spark" style="left:40%;top:45%;--dx:-18px;--dy:-41px;--c:#6659e8;animation-delay:-0.6s"></i><i class="spark" style="left:45%;top:62%;--dx:-12px;--dy:-49px;--c:#00b9dc;animation-delay:-0.8999999999999999s"></i><i class="spark" style="left:50%;top:79%;--dx:-6px;--dy:-57px;--c:#52d98b;animation-delay:-1.2s"></i><i class="spark" style="left:55%;top:14%;--dx:0px;--dy:-25px;--c:#ffd45b;animation-delay:-0.0s"></i><i class="spark" style="left:60%;top:31%;--dx:6px;--dy:-33px;--c:#ff5da8;animation-delay:-0.3s"></i><i class="spark" style="left:65%;top:48%;--dx:12px;--dy:-41px;--c:#6659e8;animation-delay:-0.6s"></i><i class="spark" style="left:70%;top:65%;--dx:18px;--dy:-49px;--c:#00b9dc;animation-delay:-0.8999999999999999s"></i><i class="spark" style="left:75%;top:82%;--dx:-18px;--dy:-57px;--c:#52d98b;animation-delay:-1.2s"></i><i class="spark" style="left:80%;top:17%;--dx:-12px;--dy:-25px;--c:#ffd45b;animation-delay:-0.0s"></i><i class="spark" style="left:85%;top:34%;--dx:-6px;--dy:-33px;--c:#ff5da8;animation-delay:-0.3s"></i><i class="spark" style="left:90%;top:51%;--dx:0px;--dy:-41px;--c:#6659e8;animation-delay:-0.6s"></i>
         <div class="gem"><b>✨</b></div>
         <div class="mini">আজকের জন্য একটি বিশেষ উপহার</div>
         <h1 class="gate-title">আজকের শুভেচ্ছা<br>আপনার জন্য অপেক্ষায়</h1>
@@ -227,64 +221,65 @@ canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:no
 <script>
 const DATA={
  "2026-08-28":{n:"রাখি বন্ধন",p:[
- "রাখির এই ছোট্ট সুতোয় থাকুক হাজার ভালোবাসা,<br>ভাই-বোনের বন্ধন জুড়ে থাকুক সারাজীবনের আশা। 🎀❤️",
- "দূরত্ব যতই হোক, মন যেন থাকে কাছে,<br>ভাই-বোনের ভালোবাসা চিরকাল একই রকম থাকে। 💖",
- "সম্পর্কের এই মায়ার বাঁধন থাকুক অটুট সারাজীবন,<br>হাসি-খুশিতে ভরে উঠুক তোমার প্রতিটি ক্ষণ। 🌸"
+ "সম্পর্কের হিসাব হয় না কথায়, হয় পাশে থাকার টানে—<br>রাখির এই বন্ধনটা থাকুক সারাজীবন, সুখে-দুঃখে ঠিক আগের মতোই প্রাণে। ❤️",
+ "ছোটবেলার সেই ঝগড়া, হাসি আর হাজার স্মৃতি—<br>সময় বদলালেও ভাই-বোনের ভালোবাসাটা যেন কোনোদিন না বদলায়। 🎀",
+ "রাখির সুতোয় বাঁধা থাকুক মনের সবচেয়ে আপন মানুষ,<br>তোমার মুখের হাসিটাই থাকুক আমার কাছে সবচেয়ে বড় আশীর্বাদ। 💖"
  ]},
  "2026-09-04":{n:"জন্মাষ্টমী",p:[
- "কৃষ্ণের বাঁশির সুরে ভরে উঠুক মনের আকাশ,<br>ভালোবাসার রঙে মুছে যাক জীবনের সব হতাশা। 🦚💙",
- "মাখনের মতো নরম হোক হৃদয়ের প্রতিটি কথা,<br>কৃষ্ণের কৃপায় দূরে যাক জীবনের সব ব্যথা। 🙏",
- "কৃষ্ণের নামে ফুটুক মনে শান্তির নীল ফুল,<br>ভালোবাসায় রঙিন হোক জীবনের প্রতিটি কূল। 💙"
+ "কৃষ্ণের বাঁশির সুরের মতো শান্ত হোক মনের সব ক্লান্তি,<br>জীবনের প্রতিটি পথে জেগে থাকুক ভালোবাসা আর শান্তি। 🦚💙",
+ "যেখানে বিশ্বাস থাকে, সেখানেই মায়া থাকে—<br>শ্রীকৃষ্ণের কৃপায় তোমার জীবনে প্রতিটি স্বপ্ন সত্যি হয়ে জাগে। 🙏",
+ "মনের অন্ধকার যতটুকু, ভক্তির আলোয় মুছে যাক,<br>কৃষ্ণের আশীর্বাদে তোমার প্রতিটি প্রিয় মানুষ ভালো থাক। 💙"
  ]},
  "2026-09-14":{n:"গণেশ চতুর্থী",p:[
- "বিঘ্নহর্তার কৃপায় থেমে যাক সব বাধার দেয়াল,<br>সাফল্যের পথে ফুটুক নতুন আশার ফুলের মালা। 🐘✨",
- "শুভ কাজের শুরুতে থাকুক গণেশের আশীর্বাদ,<br>তোমার প্রতিটি চেষ্টায় আসুক সাফল্যের স্বাদ। 💛",
- "বুদ্ধি, শক্তি আর সৌভাগ্যে ভরে উঠুক প্রাণ,<br>গণেশের কৃপায় সুন্দর হোক তোমার প্রতিটি দিন। 🌼"
+ "শুরু হোক নতুন পথ, দূরে যাক সব ভয়,<br>গণেশের আশীর্বাদে তোমার পরিশ্রম একদিন সাফল্য হয়। 🐘✨",
+ "জীবনের পথে যত বাধাই আসুক সামনে,<br>বিশ্বাস রেখো—শুভ শক্তি থাকুক তোমার প্রতিটি কাজে। 💛",
+ "চাওয়া-পাওয়ার ভিড়ে মনটা থাকুক শান্ত,<br>বিঘ্নহর্তার কৃপায় প্রতিটি দিন হোক সুন্দর ও আনন্দময়। 🌼"
  ]},
  "2026-10-10":{n:"মহালয়া",p:[
- "মায়ের আগমনের আলোয় মুছে যাক সব অন্ধকার,<br>ঘরে ঘরে ফিরে আসুক শান্তি, শক্তি আর ভালোবাসার বাহার। 🌺",
- "শিউলির গন্ধে ভোর হোক, আকাশে বাজুক আলো,<br>মায়ের কৃপায় তোমার প্রতিটি দিন হোক আরও ভালো। 🪔",
- "কাশফুল দোলে, মায়ের আগমনী সুর বাজে,<br>শুভ হোক তোমার জীবন, সুখ থাকুক প্রতিটি কাজে। 🌾"
+ "শিউলির গন্ধে ভোর হোক, কাশফুল দুলুক হাওয়ায়,<br>মায়ের আগমনের আনন্দটা ছড়িয়ে পড়ুক তোমার মনখানায়। 🌺",
+ "আকাশে আজ আগমনী সুর, চারপাশে উৎসবের আলো,<br>মায়ের কৃপায় তোমার আপন মানুষগুলো থাকুক সবসময় ভালো। 🪔",
+ "মায়ের আসার খবর যেন মনকে নতুন করে হাসায়,<br>পুরনো কষ্টগুলো মুছে দিয়ে নতুন সুখের দরজা খুলে যায়। 🌾"
  ]},
  "2026-10-16":{n:"দুর্গাপূজা — ষষ্ঠী",p:[
- "মায়ের আগমনে হাসুক আজ তোমার ঘরদুয়ার,<br>শক্তি আর শান্তিতে ভরে উঠুক জীবনের প্রতিটি পার। 🌺",
- "ঢাকের তালে জেগে উঠুক আনন্দের গান,<br>মায়ের আশীর্বাদে পূর্ণ হোক তোমার প্রাণ। 🪔"
+ "মায়ের আগমনের আনন্দে আজ মনটা হোক নতুন,<br>আপন মানুষগুলোর হাসিতে ভরে উঠুক জীবনের প্রতিটি ক্ষণ। 🌺",
+ "ঢাকের তালে উৎসব আসুক, মুছে যাক সব ক্লান্তি,<br>মায়ের আশীর্বাদে ঘরে ঘরে থাকুক ভালোবাসা আর শান্তি। ❤️"
  ]},
  "2026-10-19":{n:"মহাষ্টমী",p:[
- "মায়ের শক্তি থাকুক তোমার সাহসী হৃদয়ের মাঝে,<br>সব বাধা হার মানুক তোমার এগিয়ে চলার কাজে। 🔱",
- "অশুভ যত দূরে যাক, শুভ হোক চারিধার,<br>মায়ের কৃপায় সুখে ভরে উঠুক তোমার সংসার। 🌺"
+ "মায়ের শক্তি থাকুক মনে, সাহস থাকুক প্রাণে,<br>যে স্বপ্ন দেখেছ চুপচাপ, পৌঁছে যেও তারই টানে। 🔱",
+ "অশুভ সব দূরে যাক, শুভ হোক চারিধার,<br>মায়ের কৃপায় হাসি থাকুক তোমার আপনজনের সংসার। 🌺"
  ]},
  "2026-10-20":{n:"মহানবমী",p:[
- "নবমীর আলোয় নতুন করে ফুটুক স্বপ্নের ফুল,<br>মায়ের কৃপায় সাফল্যের পথে না থাকুক কোনো ভুল। 🌺",
- "যা চেয়েছ মনে মনে, পূর্ণ হোক সেই আশা,<br>মায়ের আশীর্বাদে ভরে উঠুক জীবন ভালোবাসায়। ✨"
+ "নবমীর আলোয় আজ একটু নিজের জন্যও হাসো,<br>মায়ের কৃপায় হারানো স্বপ্নগুলো আবার নতুন করে ভালোবাসো। 🌺",
+ "যা হয়নি এতদিন, তা নিয়েই মন খারাপ নয়,<br>মায়ের আশীর্বাদে আগামী দিনটা হোক তোমার সবচেয়ে সুন্দর জয়। ✨"
  ]},
  "2026-10-21":{n:"বিজয়া দশমী",p:[
- "অশুভের সব ছায়া যাক দূরে সরে,<br>শুভর আলো ফুটুক তোমার জীবনের ঘরে ঘরে। 🌺❤️",
- "বিজয়ার হাসিতে মুছে যাক সব অভিমান,<br>প্রিয় মানুষে ভরে উঠুক তোমার চারিধার ও প্রাণ। 💖"
+ "বিসর্জনের জলে যাক সব অভিমান ভেসে,<br>আপন মানুষগুলো থাকুক আরও আপন হয়ে, ভালোবাসার পাশে এসে। 🌺❤️",
+ "বিজয়ার প্রণামে শুধু একটাই চাওয়া—সবাই ভালো থাক,<br>দূরে থেকেও প্রিয় মানুষগুলোর মুখে যেন হাসি লেগে থাক। 💖",
+ "মায়ের বিদায়ের দিনে মনটা একটু ভারী হলেও,<br>আশীর্বাদ আর ভালোবাসা নিয়ে আবারও নতুন করে পথ চলি। 🌸"
  ]},
  "2026-10-26":{n:"লক্ষ্মী পূজা",p:[
- "মায়ের পায়ের আলপনায় ভরে উঠুক তোমার ঘর,<br>সুখ, শান্তি আর সমৃদ্ধি থাকুক জীবনভর। 🪔🌸",
- "ধানের শীষের মতো বাড়ুক তোমার সুখের ভাণ্ডার,<br>মা লক্ষ্মীর কৃপায় উজ্জ্বল হোক প্রতিটি সংসার। ✨"
+ "মায়ের পায়ের আলপনায় ভরে উঠুক ঘরের প্রতিটি কোণ,<br>অভাবের চেয়ে শান্তি আর ভালোবাসা হোক সবচেয়ে বড় সম্পদ। 🪔🌸",
+ "ধানের শীষের মতো বাড়ুক সুখ, ভরে উঠুক ঘর,<br>মা লক্ষ্মীর কৃপায় ভালো থাকুক তোমার আপনজন সারাক্ষণ। ✨"
  ]},
  "2026-11-08":{n:"কালী পূজা ও দীপাবলি",p:[
- "একটি প্রদীপের আলোয় মুছে যাক হাজার অন্ধকার,<br>মায়ের কৃপায় সুখে ভরে উঠুক তোমার সংসার। 🪔",
- "আকাশজুড়ে আলো, মনে থাকুক ভালোবাসা,<br>দীপাবলির দীপ্তিতে পূর্ণ হোক তোমার প্রতিটি আশা। ✨",
- "আলোর উৎসবে অন্ধকার যাক হারিয়ে,<br>সুখের দিন আসুক তোমার জীবনে হাসি নিয়ে। 🪔💖"
+ "একটা ছোট্ট প্রদীপও অন্ধকারকে হারাতে পারে—<br>তেমনি একটু ভালোবাসাও মানুষের কঠিন দিনটাকে সুন্দর করে দিতে পারে। 🪔❤️",
+ "আলো শুধু ঘরে নয়, মানুষের মনেও জ্বালো,<br>দীপাবলির এই দিনে প্রিয় মানুষগুলোর জীবন হোক আরও ভালো। ✨",
+ "সব কষ্ট পেছনে ফেলে নতুন আলোর পথে চলো,<br>দীপাবলির প্রতিটি প্রদীপের মতো নিজের স্বপ্নটাকেও জ্বালো। 🪔"
  ]},
  "2026-11-11":{n:"ভাই ফোঁটা",p:[
- "ফোঁটার এই ছোট্ট ছোঁয়ায় থাকুক অগাধ মায়া,<br>ভাই-বোনের বন্ধন হোক চিরদিনের ছায়া। ❤️",
- "হাসি থাকুক চোখে, ভালোবাসা থাকুক মনে,<br>ভাই-বোনের সম্পর্ক থাকুক সারাজীবন একই টানে। 🌸"
+ "ফোঁটার এই ছোট্ট ছোঁয়ায় থাকুক হাজার দিনের মায়া,<br>ভাই-বোনের সম্পর্কটা যেন সময়ের স্রোতেও হারিয়ে না যায়। ❤️",
+ "জীবন যত ব্যস্ত হোক, এই সম্পর্কটা থাকুক একই,<br>একজনের হাসিতে অন্যজনের মন ভালো হয়ে যাক—এটাই তো ভাই-বোনের ভালোবাসা। 🌸"
  ]},
  "2026-12-25":{n:"বড়দিন",p:[
- "ক্রিসমাসের আলোয় হাসুক তোমার প্রতিটি রাত,<br>ভালোবাসায় ভরে উঠুক জীবনের প্রতিটি প্রভাত। 🎄❤️",
- "উপহারের চেয়েও সুন্দর হোক প্রিয়জনের হাসি,<br>বড়দিনের আনন্দে পূর্ণ হোক তোমার প্রতিটি আশা। ✨",
- "তারার আলোয় সাজুক রাত, আনন্দে ভরে উঠুক মন,<br>বড়দিন বয়ে আনুক শান্তি, ভালোবাসা আর আপনজন। 🎄"
+ "উপহার যতই দামি হোক, প্রিয় মানুষের হাসির মতো সুন্দর নয়,<br>এই বড়দিনে তোমার চারপাশের মানুষগুলো থাকুক ভালো—এটাই সবচেয়ে বড় জয়। 🎄❤️",
+ "তারার আলোয় রাতটা হোক একটু বেশি সুন্দর,<br>ভালোবাসার মানুষগুলো থাকুক কাছে, মনটা থাকুক ভরপুর। ✨",
+ "ক্রিসমাসের আনন্দ শুধু একদিনের না হোক,<br>প্রতিটি নতুন সকালে তোমার জীবনে একটু করে সুখ আসুক। 🎄"
  ]}
 };
 const DEFAULT={n:"আজকের শুভ দিন",p:[
- "হাসির রঙে রাঙুক দিন, আনন্দে ভরে উঠুক মন,<br>আজকের এই শুভক্ষণ হয়ে থাকুক স্মৃতির সবচেয়ে সুন্দর ক্ষণ। 🎉💖",
- "আজকের সকাল বয়ে আনুক নতুন আশার আলো,<br>তোমার জীবনের প্রতিটি মুহূর্ত হোক আরও সুন্দর, আরও ভালো। ✨",
- "মনের আকাশে থাকুক সুখের নীল রং,<br>ভালোবাসার ছোঁয়ায় সুন্দর হোক আজকের প্রতিটি ক্ষণ। 💕"
+ "জীবনটা সবসময় পরিকল্পনা মতো চলে না, তবু কিছু মানুষ পাশে থাকলে পথটা সুন্দর লাগে—<br>আজ তোমার সেই আপন মানুষগুলোর জন্যই রইল এক মুঠো ভালোবাসা। ❤️",
+ "কিছু শুভেচ্ছা মুখে বলা যায় না, শুধু মনে অনুভব করা যায়—<br>আজকের দিনটা তোমার জীবনে তেমনই একটি সুন্দর স্মৃতি হয়ে থাক। ✨",
+ "সব দিন একরকম যায় না, কিছু দিন শুধু মনে রাখার জন্য আসে—<br>আজকের দিনটা তোমার হাসির কারণ হোক, আর আগামীকালটা হোক আরও সুন্দর। 💖"
 ]};
 const bnDigits=s=>String(s).replace(/\d/g,d=>"০১২৩৪৫৬৭৮৯"[d]);
 const pad=n=>String(n).padStart(2,"0");
