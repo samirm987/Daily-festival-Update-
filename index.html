@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08051d">
+<meta name="description" content="প্রতিদিনের উৎসবের জন্য জাদুকরী বাংলা শুভেচ্ছা পাঠানোর ওয়েবসাইট।">
+<title>মায়াবী শুভেচ্ছা ✨</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&display=swap');
+:root{
+  --bg:#050318;--bg2:#10052c;--pink:#ff4fd8;--violet:#8b5cf6;--cyan:#35e7ff;
+  --gold:#ffd76a;--white:#fff;--muted:#c8c1e5;--glass:rgba(255,255,255,.08);
+  --line:rgba(255,255,255,.16);--shadow:0 30px 90px rgba(0,0,0,.45)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;min-height:100vh;color:#fff;font-family:"Noto Sans Bengali",sans-serif;
+  background:
+    radial-gradient(circle at 15% 10%,rgba(139,92,246,.25),transparent 28%),
+    radial-gradient(circle at 85% 15%,rgba(53,231,255,.17),transparent 26%),
+    radial-gradient(circle at 50% 85%,rgba(255,79,216,.13),transparent 35%),
+    linear-gradient(145deg,var(--bg),var(--bg2) 52%,#050316);
+  overflow-x:hidden
+}
+button,input{font:inherit}
+button{cursor:pointer}
+.page{position:relative;min-height:100vh;overflow:hidden}
+.aurora,.stars,.orbital,.sparkles{position:fixed;inset:0;pointer-events:none;z-index:0}
+.aurora:before,.aurora:after{
+  content:"";position:absolute;border-radius:50%;filter:blur(35px);opacity:.45;animation:float 9s ease-in-out infinite
+}
+.aurora:before{width:280px;height:280px;left:-80px;top:14%;background:#7c3aed}
+.aurora:after{width:260px;height:260px;right:-80px;top:48%;background:#06b6d4;animation-delay:-3s}
+@keyframes float{50%{transform:translate(30px,-35px) scale(1.12)}}
+.stars{
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,.9) 1px,transparent 1.5px),
+    radial-gradient(circle,rgba(255,215,106,.65) 1px,transparent 1.5px);
+  background-size:83px 83px,127px 127px;background-position:10px 15px,40px 60px;opacity:.4;animation:starMove 28s linear infinite
+}
+@keyframes starMove{to{background-position:100px 130px,0 0}}
+.orbital:before,.orbital:after{
+  content:"";position:absolute;border:1px solid rgba(83,220,255,.18);border-radius:50%;
+  width:520px;height:520px;left:50%;top:38%;transform:translate(-50%,-50%) rotate(18deg);animation:spin 18s linear infinite
+}
+.orbital:after{width:700px;height:300px;border-color:rgba(255,79,216,.13);transform:translate(-50%,-50%) rotate(-28deg);animation-duration:24s}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(378deg)}}
+.wrap{position:relative;z-index:2;width:min(940px,100%);margin:auto;padding:20px 16px 60px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#d9d4ef;font-size:12px;margin-bottom:12px}
+.brand{font-weight:900;letter-spacing:.4px}
+.badge{padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.05);backdrop-filter:blur(12px)}
+.magicGate{
+  min-height:calc(100vh - 80px);display:grid;place-items:center;text-align:center;position:relative
+}
+.gateCard{
+  width:min(680px,100%);padding:48px 24px;border-radius:34px;position:relative;overflow:hidden;
+  background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.035));
+  border:1px solid rgba(255,255,255,.18);box-shadow:var(--shadow),inset 0 1px rgba(255,255,255,.25);
+  backdrop-filter:blur(20px);animation:cardFloat 5s ease-in-out infinite
+}
+@keyframes cardFloat{50%{transform:translateY(-8px)}}
+.gateCard:before{
+  content:"";position:absolute;inset:-2px;border-radius:inherit;padding:2px;
+  background:conic-gradient(from 0deg,#35e7ff,#8b5cf6,#ff4fd8,#ffd76a,#35e7ff);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;animation:spinBorder 5s linear infinite
+}
+@keyframes spinBorder{to{transform:rotate(360deg)}}
+.magicIcon{
+  width:94px;height:94px;margin:0 auto 22px;border-radius:50%;display:grid;place-items:center;font-size:48px;
+  background:radial-gradient(circle,#fff9d2 0 8%,#ffd76a 9% 25%,#8b5cf6 50%,transparent 72%);
+  box-shadow:0 0 35px rgba(255,215,106,.55),0 0 90px rgba(139,92,246,.35);animation:magicPulse 2.2s ease-in-out infinite
+}
+@keyframes magicPulse{50%{transform:scale(1.1) rotate(5deg);filter:brightness(1.25)}}
+.gateKicker{color:#ffd76a;font-weight:800;letter-spacing:1.5px;font-size:13px}
+.gateTitle{font-size:clamp(34px,7vw,66px);line-height:1.08;margin:12px 0;background:linear-gradient(90deg,#fff,#ffd76a,#ff79e2,#7deeff,#fff);background-size:300%;-webkit-background-clip:text;color:transparent;animation:gradient 5s linear infinite}
+@keyframes gradient{to{background-position:300%}}
+.gateSub{color:#d8d1ec;line-height:1.8;font-size:15px;margin:0 auto 28px;max-width:540px}
+.magicBtn{
+  border:0;color:#140721;font-weight:900;padding:15px 28px;border-radius:999px;
+  background:linear-gradient(135deg,#ffd76a,#ff9eea 48%,#72efff);
+  box-shadow:0 14px 35px rgba(255,79,216,.25),inset 0 2px rgba(255,255,255,.75);
+  transition:.25s;position:relative;overflow:hidden
+}
+.magicBtn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 18px 45px rgba(139,92,246,.4)}
+.magicBtn:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.8) 50%,transparent 65%);transform:translateX(-120%);animation:shine 3.2s infinite}
+@keyframes shine{45%,100%{transform:translateX(120%)}}
+.hidden{display:none!important}
+#wishArea{animation:reveal .75s cubic-bezier(.2,.8,.2,1)}
+@keyframes reveal{from{opacity:0;transform:translateY(25px) scale(.98)}to{opacity:1;transform:none}}
+.heroWish{
+  position:relative;text-align:center;padding:34px 18px 28px;border-radius:30px;
+  background:linear-gradient(145deg,rgba(25,9,59,.82),rgba(7,25,50,.72));
+  border:1px solid rgba(255,255,255,.18);box-shadow:var(--shadow);overflow:hidden
+}
+.heroWish:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 10%,rgba(255,215,106,.16),transparent 35%);pointer-events:none}
+.datePill{display:inline-flex;gap:7px;align-items:center;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid var(--line);color:#e8e1fb;font-size:13px}
+.festivalName{font-size:clamp(32px,6vw,58px);line-height:1.12;margin:18px 0 12px;background:linear-gradient(90deg,#fff,#ffd76a,#ff72dd,#75f2ff);-webkit-background-clip:text;color:transparent}
+.festivalTag{color:#ddd5ef;margin-bottom:22px}
+.wishText{
+  max-width:700px;margin:auto;padding:24px;border-radius:24px;
+  background:linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.035));
+  border:1px solid rgba(255,255,255,.13);font-size:clamp(18px,3.5vw,25px);line-height:1.9;font-weight:700
+}
+.wishText .sender{color:#ffd76a}
+.wishText .heart{color:#ff74d9}
+.section{margin-top:18px;padding:22px;border-radius:26px;background:rgba(8,12,35,.72);border:1px solid var(--line);box-shadow:0 18px 55px rgba(0,0,0,.22);backdrop-filter:blur(16px)}
+.sectionTitle{margin:0 0 8px;font-size:21px}
+.help{margin:0 0 16px;color:#bcb5d5;font-size:13px;line-height:1.7}
+.nameRow{display:flex;gap:10px}
+.nameInput{
+  flex:1;min-width:0;border:1px solid rgba(255,255,255,.18);outline:0;border-radius:16px;padding:15px 16px;
+  color:#fff;background:rgba(255,255,255,.08);box-shadow:inset 0 1px rgba(255,255,255,.08);transition:.2s
+}
+.nameInput:focus{border-color:#72efff;box-shadow:0 0 0 4px rgba(53,231,255,.1)}
+.shareBtn{
+  min-width:150px;border:0;border-radius:16px;padding:0 18px;font-weight:900;color:#092015;
+  background:linear-gradient(135deg,#72f7bd,#35e7ff);box-shadow:0 12px 25px rgba(53,231,255,.18);transition:.2s
+}
+.shareBtn:disabled{opacity:.35;filter:grayscale(.6);cursor:not-allowed;box-shadow:none}
+.shareBtn:not(:disabled):hover{transform:translateY(-2px)}
+.preview{margin-top:14px;display:none;padding:13px;border-radius:16px;background:rgba(255,255,255,.05);color:#dcd6ef;font-size:13px;line-height:1.7}
+.nextBox{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+.miniCard{flex:1;min-width:180px;padding:15px;border-radius:18px;background:linear-gradient(145deg,rgba(139,92,246,.15),rgba(53,231,255,.07));border:1px solid var(--line)}
+.miniCard b{display:block;color:#ffd76a;margin-bottom:5px}
+.footer{text-align:center;color:#8f88aa;font-size:12px;margin-top:24px}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(20px);opacity:0;z-index:50;padding:12px 17px;border-radius:999px;background:#fff;color:#150923;font-weight:800;box-shadow:0 15px 40px rgba(0,0,0,.35);transition:.3s;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.confetti{position:fixed;z-index:30;width:7px;height:14px;top:-20px;pointer-events:none;animation:fall 2.8s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.1}}
+@media(max-width:620px){
+  .wrap{padding:12px 11px 42px}.topbar{font-size:10px}
+  .gateCard{padding:38px 17px;border-radius:28px}.magicIcon{width:78px;height:78px;font-size:38px}
+  .nameRow{flex-direction:column}.shareBtn{height:52px;width:100%}
+  .heroWish{padding:27px 12px 22px}.section{padding:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="aurora"></div><div class="stars"></div><div class="orbital"></div>
+
+  <main class="wrap">
+    <div class="topbar">
+      <div class="brand">✨ মায়াবী শুভেচ্ছা</div>
+      <div class="badge">প্রতিদিন নতুন শুভেচ্ছা</div>
+    </div>
+
+    <section id="gate" class="magicGate">
+      <div class="gateCard">
+        <div class="magicIcon">✨</div>
+        <div class="gateKicker">একটি ছোট্ট জাদুর দরজা</div>
+        <h1 class="gateTitle">আহা… ক্লিক করে দেখুন! 💫</h1>
+        <p class="gateSub">এই সুন্দর জাদুর আড়ালে আজকের দিনের জন্য একটি বিশেষ শুভেচ্ছা লুকিয়ে আছে। দরজাটি খুললেই আজকের উৎসবের শুভেচ্ছা প্রকাশ হবে।</p>
+        <button class="magicBtn" id="openMagic">✨ জাদুর শুভেচ্ছা খুলুন ✨</button>
+      </div>
+    </section>
+
+    <section id="wishArea" class="hidden">
+      <div class="heroWish">
+        <div class="datePill">📅 <span id="todayText"></span></div>
+        <h2 class="festivalName" id="festivalName">আজকের শুভেচ্ছা</h2>
+        <div class="festivalTag" id="festivalTag"></div>
+        <div class="wishText" id="wishText"></div>
+      </div>
+
+      <section class="section">
+        <h3 class="sectionTitle">💌 নিজের নাম দিয়ে শুভেচ্ছাটি পাঠান</h3>
+        <p class="help">আপনার নাম লিখলেই WhatsApp শেয়ার বাটন চালু হবে। তারপর বন্ধুর কাছে লিংকটি পাঠিয়ে দিন—বন্ধু লিংক খুললে আপনার নামের পক্ষ থেকেই শুভেচ্ছাটি দেখাবে।</p>
+        <div class="nameRow">
+          <input class="nameInput" id="senderName" type="text" maxlength="40" placeholder="আপনার নাম লিখুন...">
+          <button class="shareBtn" id="shareBtn" disabled>💚 WhatsApp-এ পাঠান</button>
+        </div>
+        <div class="preview" id="preview"></div>
+      </section>
+
+      <div class="nextBox">
+        <div class="miniCard"><b>✨ কীভাবে কাজ করবে?</b>নাম লিখুন → WhatsApp-এ পাঠান → বন্ধু লিংক খুলবে → আপনার নামের পক্ষ থেকে আজকের শুভেচ্ছা দেখবে।</div>
+        <div class="miniCard"><b>🔄 প্রতিদিন নতুন</b>তারিখ অনুযায়ী ওয়েবসাইট নিজে থেকেই নির্ধারিত উৎসবের শুভেচ্ছা দেখাবে।</div>
+      </div>
+
+      <div class="footer">💖 ভালোবাসা দিয়ে শুভেচ্ছা ছড়িয়ে দিন • মায়াবী শুভেচ্ছা</div>
+    </section>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== উৎসবের ডেটা =====
+   2026-এর প্রধান বাংলা/ভারতীয় উৎসবের তারিখ এখানে রাখা হয়েছে।
+   নতুন বছর/নতুন উৎসব যোগ করতে শুধু FESTIVALS-এ নতুন entry যোগ করুন।
+*/
+const FESTIVALS = {
+  "2026-01-14": {
+    name:"মকর সংক্রান্তি",
+    tag:"সূর্যের নতুন যাত্রার পবিত্র দিন",
+    wish:"মকর সংক্রান্তির উষ্ণ রোদে আপনার জীবন ভরে উঠুক সুখ, শান্তি, সমৃদ্ধি আর ভালোবাসায়। নতুন দিনের প্রতিটি মুহূর্ত হোক আনন্দে ভরা। 🪁☀️"
+  },
+  "2026-01-23": {
+    name:"সরস্বতী পূজা",
+    tag:"জ্ঞান, বিদ্যা ও সৃষ্টির শুভ উৎসব",
+    wish:"মা সরস্বতীর আশীর্বাদে আপনার জীবন ভরে উঠুক জ্ঞান, সাফল্য, সৃজনশীলতা ও সুন্দর ভবিষ্যতের আলোয়। শুভ সরস্বতী পূজা। 📚🌼"
+  },
+  "2026-02-15": {
+    name:"মহাশিবরাত্রি",
+    tag:"ভক্তি ও মহাদেবের পবিত্র রাত্রি",
+    wish:"মহাদেবের আশীর্বাদে আপনার জীবনের সব অন্ধকার দূর হয়ে শান্তি, শক্তি ও সমৃদ্ধির আলোয় ভরে উঠুক প্রতিটি দিন। হর হর মহাদেব। 🔱🕉️"
+  },
+  "2026-03-03": {
+    name:"দোল পূর্ণিমা",
+    tag:"রঙ, আনন্দ ও ভালোবাসার উৎসব",
+    wish:"রঙের মতো আপনার জীবনও হোক আনন্দ, ভালোবাসা ও হাসিতে রঙিন। সম্পর্কের প্রতিটি মুহূর্ত হয়ে উঠুক আরও সুন্দর। শুভ দোল পূর্ণিমা। 🌸🎨"
+  },
+  "2026-04-14": {
+    name:"পয়লা বৈশাখ",
+    tag:"নতুন বছর, নতুন আশা",
+    wish:"নতুন বছরের প্রতিটি সকাল নিয়ে আসুক নতুন আশা, নতুন স্বপ্ন ও সাফল্য। আপনার ঘর ভরে উঠুক শান্তি, আনন্দ ও সমৃদ্ধিতে। শুভ নববর্ষ। 🌺🎉"
+  },
+  "2026-07-16": {
+    name:"রথযাত্রা",
+    tag:"ভক্তি ও শুভ যাত্রার পবিত্র উৎসব",
+    wish:"জগন্নাথদেবের আশীর্বাদে আপনার জীবনের প্রতিটি পথ হোক মঙ্গলময়। সুখ, শান্তি ও সমৃদ্ধি সবসময় আপনার সঙ্গে থাকুক। শুভ রথযাত্রা। 🛕✨"
+  },
+  "2026-08-23": {
+    name:"শ্রাবণ পুত্রদা একাদশী",
+    tag:"ভক্তি ও প্রার্থনার পবিত্র দিন",
+    wish:"ভক্তি ও প্রার্থনায় আজকের দিনটি আপনার পরিবারে শান্তি, মঙ্গল ও আশীর্বাদ নিয়ে আসুক। ঈশ্বর আপনার সকল শুভকামনা পূর্ণ করুন। 🙏✨"
+  },
+  "2026-08-28": {
+    name:"রাখি বন্ধন",
+    tag:"ভাই-বোনের ভালোবাসার পবিত্র বন্ধন",
+    wish:"ভাই-বোনের এই সুন্দর বন্ধন চিরকাল অটুট থাকুক। ভালোবাসা, যত্ন আর হাসিতে ভরে উঠুক সম্পর্কের প্রতিটি দিন। শুভ রাখি বন্ধন। 🎀❤️"
+  },
+  "2026-09-04": {
+    name:"জন্মাষ্টমী",
+    tag:"শ্রীকৃষ্ণের শুভ আবির্ভাবের দিন",
+    wish:"শ্রীকৃষ্ণের মধুর বাঁশির সুরে আপনার জীবন ভরে উঠুক আনন্দ, ভালোবাসা ও শান্তিতে। জীবনের প্রতিটি পথে থাকুক ঈশ্বরের আশীর্বাদ। শুভ জন্মাষ্টমী। 🦚💙"
+  },
+  "2026-09-14": {
+    name:"গণেশ চতুর্থী",
+    tag:"শুভ সূচনা ও বাধা দূর করার পবিত্র উৎসব",
+    wish:"গণেশজির আশীর্বাদে জীবনের সব বাধা দূর হোক, নতুন প্রতিটি কাজে আসুক সাফল্য, শান্তি ও সমৃদ্ধি। শুভ গণেশ চতুর্থী। 🐘✨"
+  },
+  "2026-09-17": {
+    name:"বিশ্বকর্মা পূজা",
+    tag:"শিল্প, কর্ম ও সৃষ্টির উৎসব",
+    wish:"বিশ্বকর্মা দেবের আশীর্বাদে আপনার কাজের প্রতিটি প্রচেষ্টা সফল হোক। কর্মজীবনে আসুক উন্নতি, নিরাপত্তা ও সমৃদ্ধি। শুভ বিশ্বকর্মা পূজা। 🔧✨"
+  },
+  "2026-10-10": {
+    name:"মহালয়া",
+    tag:"মায়ের আগমনের শুভ সূচনা",
+    wish:"মায়ের আগমনের এই পবিত্র প্রভাতে আপনার জীবন থেকে সব অশুভ দূর হোক। ঘর ভরে উঠুক শান্তি, শক্তি ও আশীর্বাদে। শুভ মহালয়া। 🌺🪔"
+  },
+  "2026-10-16": {
+    name:"দুর্গাপূজা — ষষ্ঠী",
+    tag:"মায়ের বোধনের শুভ দিন",
+    wish:"মা দুর্গার আশীর্বাদে আপনার জীবনে সাহস, শক্তি, শান্তি ও আনন্দের নতুন আলো জ্বলে উঠুক। শুভ দুর্গাপূজা। 🪔🌺"
+  },
+  "2026-10-17": {
+    name:"দুর্গাপূজা — সপ্তমী",
+    tag:"শারদীয়ার আনন্দে ভরা শুভ দিন",
+    wish:"মায়ের আশীর্বাদে আপনার পরিবারে সুখ ও শান্তি নেমে আসুক। প্রিয়জনদের সঙ্গে কাটুক আনন্দের সুন্দর সময়। শুভ সপ্তমী। 🌺"
+  },
+  "2026-10-19": {
+    name:"মহাষ্টমী",
+    tag:"শক্তি ও ভক্তির মহাপবিত্র দিন",
+    wish:"মা দুর্গার শক্তি আপনার সব ভয় ও বাধা দূর করুক। আপনার জীবন হোক সাহস, সাফল্য ও শান্তিতে পূর্ণ। শুভ মহাষ্টমী। 🔱🌺"
+  },
+  "2026-10-20": {
+    name:"মহানবমী",
+    tag:"মায়ের আশীর্বাদে বিজয়ের প্রার্থনা",
+    wish:"মায়ের কৃপায় আপনার জীবনের প্রতিটি স্বপ্ন পূর্ণ হোক এবং প্রতিটি নতুন পথ নিয়ে আসুক সাফল্য ও আনন্দ। শুভ মহানবমী। 🌺✨"
+  },
+  "2026-10-21": {
+    name:"বিজয়া দশমী",
+    tag:"শুভ বিজয়ের পবিত্র দিন",
+    wish:"অশুভের উপর শুভর জয় হোক। আপনার জীবন থেকে সব দুঃখ দূরে গিয়ে ভালোবাসা, শান্তি ও সাফল্যে ভরে উঠুক। শুভ বিজয়া দশমী। ❤️🌺"
+  },
+  "2026-10-26": {
+    name:"লক্ষ্মী পূজা",
+    tag:"সমৃদ্ধি ও শান্তির পবিত্র উৎসব",
+    wish:"মা লক্ষ্মীর কৃপায় আপনার ঘর ভরে উঠুক সুখ, শান্তি, সমৃদ্ধি ও ভালোবাসায়। জীবনের প্রতিটি শুভ কাজে আসুক সাফল্য। শুভ লক্ষ্মী পূজা। 🪔🌸"
+  },
+  "2026-11-08": {
+    name:"কালী পূজা ও দীপাবলি",
+    tag:"আলো ও শক্তির মহাউৎসব",
+    wish:"মায়ের আশীর্বাদে সব অন্ধকার দূর হয়ে আপনার জীবন ভরে উঠুক আলো, সাহস, শান্তি ও আনন্দে। শুভ কালী পূজা ও দীপাবলি। 🪔✨"
+  },
+  "2026-11-11": {
+    name:"ভাই ফোঁটা",
+    tag:"ভাই-বোনের ভালোবাসার মিষ্টি বন্ধন",
+    wish:"ভাই-বোনের ভালোবাসা ও আশীর্বাদ চিরকাল অটুট থাকুক। জীবনের প্রতিটি পথে একে অপরের পাশে থাকার শক্তি থাকুক। শুভ ভাই ফোঁটা। ❤️"
+  },
+  "2026-11-18": {
+    name:"জগদ্ধাত্রী পূজা",
+    tag:"শক্তি, মঙ্গল ও মাতৃশক্তির উৎসব",
+    wish:"মা জগদ্ধাত্রীর আশীর্বাদে আপনার জীবন ভরে উঠুক শক্তি, শান্তি, ভালোবাসা ও সমৃদ্ধিতে। শুভ জগদ্ধাত্রী পূজা। 🌺✨"
+  },
+  "2026-12-25": {
+    name:"বড়দিন",
+    tag:"ভালোবাসা ও আনন্দের উৎসব",
+    wish:"বড়দিনের আনন্দ আপনার জীবন ভরে তুলুক ভালোবাসা, শান্তি, হাসি ও সুন্দর মুহূর্তে। আপনার পরিবারে থাকুক অফুরন্ত আনন্দ। 🎄❤️"
+  }
+};
+
+const DEFAULT_WISH = {
+  name:"আজকের সুন্দর দিন",
+  tag:"আপনার জন্য একটি মায়াবী শুভেচ্ছা",
+  wish:"আজকের দিনটি আপনার জীবনে নতুন আনন্দ, শান্তি, ভালোবাসা ও সাফল্যের বার্তা নিয়ে আসুক। আপনার মুখের হাসি যেন প্রতিদিন আরও উজ্জ্বল হয়ে ওঠে। শুভ দিন। ✨💖"
+};
+
+const bnMonths=["জানুয়ারি","ফেব্রুয়ারি","মার্চ","এপ্রিল","মে","জুন","জুলাই","আগস্ট","সেপ্টেম্বর","অক্টোবর","নভেম্বর","ডিসেম্বর"];
+const bnDigits=s=>String(s).replace(/\d/g,d=>"০১২৩৪৫৬৭৮৯"[d]);
+const pad=n=>String(n).padStart(2,"0");
+const keyForDate=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+
+function getToday(){
+  const now=new Date();
+  return {date:now,key:keyForDate(now)};
+}
+function getFestival(){
+  const t=getToday();
+  return FESTIVALS[t.key] || DEFAULT_WISH;
+}
+function getSender(){
+  const p=new URLSearchParams(location.search);
+  return (p.get("from")||"").trim().slice(0,40);
+}
+function dateLabel(d){
+  return `${bnDigits(d.getDate())} ${bnMonths[d.getMonth()]} ${bnDigits(d.getFullYear())}`;
+}
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+}
+function personalize(){
+  const festival=getFestival(), sender=getSender();
+  const wish = sender
+    ? `<span class="sender">${escapeHtml(sender)}</span>-এর পক্ষ থেকে আপনার জন্য আজকের এই বিশেষ শুভেচ্ছা।<br><span class="heart">“${escapeHtml(festival.wish)}”</span>`
+    : `<span class="heart">“${escapeHtml(festival.wish)}”</span>`;
+  document.getElementById("festivalName").textContent=festival.name;
+  document.getElementById("festivalTag").textContent=festival.tag;
+  document.getElementById("wishText").innerHTML=wish;
+  document.getElementById("todayText").textContent=dateLabel(getToday().date);
+}
+function confetti(){
+  const symbols=["✦","✧","◆","●","★","✨"];
+  for(let i=0;i<45;i++){
+    const e=document.createElement("div");e.className="confetti";e.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    e.style.left=Math.random()*100+"vw";
+    e.style.fontSize=(10+Math.random()*16)+"px";
+    e.style.animationDelay=(Math.random()*1.1)+"s";
+    e.style.color=["#ffd76a","#ff4fd8","#35e7ff","#fff"][Math.floor(Math.random()*4)];
+    document.body.appendChild(e);setTimeout(()=>e.remove(),3500);
+  }
+}
+function showToast(t){
+  const e=document.getElementById("toast");e.textContent=t;e.classList.add("show");
+  setTimeout(()=>e.classList.remove("show"),2200);
+}
+function openWish(){
+  personalize();
+  document.getElementById("gate").classList.add("hidden");
+  document.getElementById("wishArea").classList.remove("hidden");
+  confetti();
+  setTimeout(()=>document.getElementById("wishArea").scrollIntoView({behavior:"smooth",block:"start"}),100);
+}
+function makeShareUrl(name){
+  const url=new URL(location.href);
+  url.searchParams.set("from",name.trim());
+  return url.href;
+}
+function updateShare(){
+  const name=document.getElementById("senderName").value.trim();
+  const btn=document.getElementById("shareBtn");
+  btn.disabled=!name;
+  const p=document.getElementById("preview");
+  if(name){
+    const f=getFestival();
+    p.style.display="block";
+    p.innerHTML=`<b>${escapeHtml(name)}</b>-এর পক্ষ থেকে <b>${escapeHtml(f.name)}</b>-এর শুভেচ্ছা পাঠানো হবে।`;
+  }else{p.style.display="none";p.textContent=""}
+}
+function shareWhatsApp(){
+  const name=document.getElementById("senderName").value.trim();
+  if(!name){showToast("আগে আপনার নাম লিখুন ✨");return}
+  const f=getFestival(),url=makeShareUrl(name);
+  const message=`হ্যালো 👋\n${name}-এর পক্ষ থেকে আপনার জন্য ${f.name}-এর একটি সুন্দর শুভেচ্ছা এসেছে। 💖\n\n✨ শুভেচ্ছাটি দেখতে নিচের লিংকে ক্লিক করুন:\n${url}`;
+  location.href="https://wa.me/?text="+encodeURIComponent(message);
+}
+document.getElementById("openMagic").addEventListener("click",openWish);
+document.getElementById("senderName").addEventListener("input",updateShare);
+document.getElementById("shareBtn").addEventListener("click",shareWhatsApp);
+
+// Link opened from a friend: show the magic first, but personalize after opening.
+if(getSender()){
+  // Keep the mystery screen intact; the personalized name appears after the magical click.
+}
+</script>
+</body>
+</html>
