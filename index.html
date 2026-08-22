@@ -60,7 +60,7 @@ canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:no
 @keyframes sweep{0%,50%{transform:translateX(-55%) rotate(-18deg)}100%{transform:translateX(55%) rotate(-18deg)}}
 
 /* animated flame-like particles around the card */
-.flame{position:absolute;bottom:6%;width:8px;height:28px;border-radius:60% 40% 55% 45%;
+.flame{pointer-events:none;position:absolute;bottom:6%;width:8px;height:28px;border-radius:60% 40% 55% 45%;
   background:linear-gradient(#fff4a3,#ffb300 45%,#ff4d6d);
   filter:blur(.2px);box-shadow:0 0 16px #ff9d00aa,0 0 32px #ff4d6d55;
   animation:flameUp var(--t) ease-in-out infinite;opacity:.8
@@ -71,12 +71,12 @@ canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:no
   55%{transform:translateY(-100px) translateX(var(--x)) scale(1.15) rotate(12deg)}
   100%{transform:translateY(-210px) translateX(calc(var(--x)*1.6)) scale(.25) rotate(-15deg);opacity:0}
 }
-.spark{position:absolute;width:5px;height:5px;border-radius:50%;background:#fff;
+.spark{pointer-events:none;position:absolute;width:5px;height:5px;border-radius:50%;background:#fff;
   box-shadow:0 0 12px #fff,0 0 22px var(--c);animation:spark 2.5s ease-in-out infinite
 }
 @keyframes spark{50%{transform:translate(var(--dx),var(--dy)) scale(1.8);opacity:.35}}
 
-.gem{
+.gem{pointer-events:none;
  width:100px;height:100px;border-radius:50%;display:grid;place-items:center;margin-bottom:22px;
  background:radial-gradient(circle at 34% 25%,#fff 0 5%,transparent 6%),
  radial-gradient(circle,#fff8cf 0 13%,#ffd45a 14% 30%,#ff74bb 31% 44%,#8e67ff 45% 60%,#fff 61% 67%,#dce9ff 68%);
@@ -169,6 +169,21 @@ padding:11px 17px;border-radius:99px;background:#202a3a;color:#fff;font-size:12p
  .magic-card:before{inset:9px;border-radius:27px}.gem{width:84px;height:84px}.gem b{font-size:34px}
  .gate-text{font-size:13px}.poem{padding:28px 16px;border-radius:28px}.poemtext{font-size:18px}
 }
+
+/* === MOBILE CTA HARD FIX === */
+#gate{position:relative;z-index:50}
+#gate .magic-stage,#gate .magic-card{position:relative;z-index:51}
+#gate .flame,#gate .spark,#gate .gem{pointer-events:none}
+#gate .open-btn{
+  position:relative;
+  z-index:99999 !important;
+  pointer-events:auto !important;
+  cursor:pointer !important;
+  touch-action:manipulation !important;
+  -webkit-tap-highlight-color:transparent;
+}
+#gate .open-btn::before,#gate .open-btn::after{pointer-events:none !important}
+
 </style>
 
 </head>
@@ -300,13 +315,36 @@ document.getElementById("poem").innerHTML=f.p[idx];
 const openBtn=document.getElementById("open");
 const gate=document.getElementById("gate");
 const gift=document.getElementById("gift");
+let wishOpened=false;
 
 function revealWish(){
+  if(wishOpened) return;
+  wishOpened=true;
   gate.classList.add("hidden");
   gift.classList.remove("hidden");
-  window.scrollTo({top:0,behavior:"smooth"});
+  window.scrollTo(0,0);
   burst();
 }
+
+/* Normal click */
+openBtn.onclick=revealWish;
+
+/* Mobile touch/pointer fallback */
+openBtn.addEventListener("pointerup",(e)=>{
+  e.preventDefault();
+  revealWish();
+},{passive:false});
+
+/* Last-resort capture handler: even if a decorative layer becomes the target,
+   a tap inside the visible button rectangle still opens the wishing. */
+window.addEventListener("pointerup",(e)=>{
+  if(wishOpened) return;
+  const r=openBtn.getBoundingClientRect();
+  if(e.clientX>=r.left && e.clientX<=r.right && e.clientY>=r.top && e.clientY<=r.bottom){
+    e.preventDefault();
+    revealWish();
+  }
+},true);
 
 openBtn.addEventListener("click",revealWish);
 openBtn.addEventListener("touchend",(e)=>{
