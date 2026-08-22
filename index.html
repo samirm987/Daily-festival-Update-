@@ -184,6 +184,245 @@ padding:11px 17px;border-radius:99px;background:#202a3a;color:#fff;font-size:12p
 }
 #gate .open-btn::before,#gate .open-btn::after{pointer-events:none !important}
 
+
+/* =========================================================
+   PREMIUM MAGICAL 3D FIRE THEME — VISUAL UPGRADE
+   ========================================================= */
+:root{
+  --gold:#ffd34e;
+  --gold2:#ff9d18;
+  --pink:#ff4fa3;
+  --violet:#7b5cff;
+  --cyan:#32e7ff;
+  --blue:#2f7cff;
+  --fire:#ff5b24;
+  --ink:#11172b;
+}
+
+/* Deep premium canvas */
+body{
+  background:
+    radial-gradient(circle at 15% 12%,rgba(255,211,78,.20),transparent 24%),
+    radial-gradient(circle at 88% 18%,rgba(50,231,255,.18),transparent 26%),
+    radial-gradient(circle at 50% 80%,rgba(255,79,163,.12),transparent 32%),
+    linear-gradient(135deg,#07091a 0%,#101735 42%,#090c20 100%) !important;
+  overflow-x:hidden;
+}
+
+/* Floating ambient aurora */
+body::before{
+  content:"";
+  position:fixed;
+  inset:-25%;
+  z-index:-3;
+  pointer-events:none;
+  background:
+    conic-gradient(from 0deg,
+      transparent 0deg,
+      rgba(255,79,163,.10) 55deg,
+      transparent 110deg,
+      rgba(50,231,255,.10) 180deg,
+      transparent 235deg,
+      rgba(255,211,78,.10) 300deg,
+      transparent 360deg);
+  filter:blur(35px);
+  animation:auroraSpin 18s linear infinite;
+}
+@keyframes auroraSpin{to{transform:rotate(360deg) scale(1.08)}}
+
+/* Premium gate shell */
+#gate{
+  position:relative;
+  isolation:isolate;
+  padding:18px 10px 26px !important;
+}
+
+/* Magical fire frame around the main wishing panel */
+#gate .magic-stage{
+  width:min(820px,100%) !important;
+  padding:14px !important;
+  position:relative;
+  isolation:isolate;
+}
+#gate .magic-stage::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:46px;
+  padding:3px;
+  background:conic-gradient(
+    from 0deg,
+    #ffd34e,#ff5b24,#ff4fa3,#7b5cff,#32e7ff,#2f7cff,
+    #ffd34e,#ff5b24
+  );
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  animation:borderSpin 7s linear infinite;
+  filter:drop-shadow(0 0 8px rgba(255,211,78,.65))
+         drop-shadow(0 0 24px rgba(255,79,163,.35))
+         drop-shadow(0 0 42px rgba(50,231,255,.22));
+  z-index:-1;
+}
+@keyframes borderSpin{to{transform:rotate(360deg)}}
+
+/* Animated fire/energy aura */
+#gate .magic-stage::after{
+  content:"";
+  position:absolute;
+  inset:-18px;
+  border-radius:60px;
+  z-index:-2;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 8% 50%,rgba(255,91,36,.60),transparent 16%),
+    radial-gradient(ellipse at 92% 50%,rgba(255,79,163,.55),transparent 16%),
+    radial-gradient(ellipse at 50% 3%,rgba(255,211,78,.50),transparent 13%),
+    radial-gradient(ellipse at 50% 97%,rgba(50,231,255,.42),transparent 13%);
+  filter:blur(18px);
+  animation:fireAura 2.6s ease-in-out infinite alternate;
+}
+@keyframes fireAura{
+  0%{opacity:.65;transform:scale(.985)}
+  100%{opacity:1;transform:scale(1.025)}
+}
+
+/* Main card = glass + 3D depth */
+#gate .magic-card{
+  min-height:500px !important;
+  border-radius:40px !important;
+  padding:42px 24px !important;
+  background:
+    radial-gradient(circle at 50% 8%,rgba(255,255,255,.98),rgba(248,251,255,.97) 38%,rgba(229,240,255,.95) 100%) !important;
+  border:1px solid rgba(255,255,255,.92) !important;
+  box-shadow:
+    0 45px 110px rgba(0,0,0,.45),
+    0 0 0 1px rgba(50,231,255,.35),
+    inset 0 2px 0 rgba(255,255,255,.95),
+    inset 0 -25px 55px rgba(85,112,180,.16) !important;
+  transform-style:preserve-3d;
+  animation:cardFloat 5s ease-in-out infinite;
+}
+@keyframes cardFloat{
+  0%,100%{transform:translateY(0) rotateX(0deg)}
+  50%{transform:translateY(-6px) rotateX(.5deg)}
+}
+
+/* Make existing flames much richer */
+#gate .flame{
+  pointer-events:none !important;
+  width:10px !important;
+  height:42px !important;
+  bottom:2% !important;
+  background:
+    radial-gradient(ellipse at 50% 85%,#fff 0 8%,#ffd34e 18%,#ff9d18 42%,#ff5b24 67%,#ff4fa3 100%) !important;
+  box-shadow:
+    0 0 12px #ffd34e,
+    0 0 28px #ff5b24,
+    0 0 50px #ff4fa388 !important;
+  filter:blur(.2px) !important;
+}
+
+/* Extra fire points at all four edges */
+#gate .magic-card{
+  overflow:visible !important;
+}
+#gate .magic-card::before{
+  content:"";
+  position:absolute;
+  inset:7px;
+  border-radius:34px;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 4% 18%,#ffd34e 0 2px,transparent 4px),
+    radial-gradient(circle at 96% 24%,#ff4fa3 0 2px,transparent 4px),
+    radial-gradient(circle at 8% 72%,#32e7ff 0 2px,transparent 4px),
+    radial-gradient(circle at 93% 78%,#ff7a32 0 2px,transparent 4px);
+  box-shadow:
+    inset 0 0 30px rgba(255,211,78,.12),
+    inset 0 0 60px rgba(255,79,163,.08);
+  animation:edgePulse 2.2s ease-in-out infinite alternate;
+}
+@keyframes edgePulse{
+  from{opacity:.55}
+  to{opacity:1}
+}
+
+/* 3D gem branding */
+#gate .gem{
+  position:relative;
+  z-index:3;
+  transform:translateZ(35px);
+  box-shadow:
+    0 22px 35px rgba(43,58,108,.22),
+    0 0 28px rgba(255,211,78,.70),
+    0 0 70px rgba(255,79,163,.42),
+    0 0 110px rgba(50,231,255,.25) !important;
+}
+
+/* Premium typography */
+#gate .gate-title{
+  position:relative;
+  z-index:4;
+  text-shadow:
+    0 2px 0 #fff,
+    0 7px 20px rgba(41,54,102,.20);
+  background:linear-gradient(90deg,#17214a,#7b3cff,#e63f8f,#d48700,#17214a);
+  background-size:250% auto;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  animation:titleFlow 5s linear infinite;
+}
+@keyframes titleFlow{to{background-position:250% center}}
+
+#gate .gate-text{
+  position:relative;
+  z-index:4;
+  color:#46516f !important;
+}
+
+/* CTA: luxury 3D button */
+#gate .open-btn{
+  position:relative !important;
+  z-index:99999 !important;
+  min-width:min(330px,88vw);
+  padding:18px 30px !important;
+  border:2px solid rgba(255,255,255,.8) !important;
+  background:
+    linear-gradient(135deg,#ffb000 0%,#ff5b24 28%,#ff4fa3 58%,#7458ff 82%,#32cfff 100%) !important;
+  background-size:220% 220% !important;
+  box-shadow:
+    0 18px 0 rgba(103,42,118,.20),
+    0 25px 45px rgba(255,79,163,.28),
+    0 0 25px rgba(255,211,78,.50),
+    inset 0 2px 2px rgba(255,255,255,.8),
+    inset 0 -7px 12px rgba(100,20,90,.22) !important;
+  text-shadow:0 2px 4px rgba(80,20,80,.35);
+  animation:ctaGlow 3s ease-in-out infinite,ctaGradient 6s linear infinite;
+}
+@keyframes ctaGlow{
+  0%,100%{filter:brightness(1);box-shadow:0 18px 0 rgba(103,42,118,.20),0 25px 45px rgba(255,79,163,.28),0 0 25px rgba(255,211,78,.50),inset 0 2px 2px #fff8}
+  50%{filter:brightness(1.12);box-shadow:0 18px 0 rgba(103,42,118,.18),0 28px 65px rgba(50,231,255,.34),0 0 38px rgba(255,211,78,.75),inset 0 2px 2px #fff9}
+}
+@keyframes ctaGradient{to{background-position:220% 0}}
+
+/* Floating magical sparks */
+#gate .spark{
+  pointer-events:none !important;
+  width:7px !important;height:7px !important;
+  box-shadow:0 0 10px #fff,0 0 25px var(--c),0 0 42px var(--c) !important;
+}
+
+/* Hide the visual frame on tiny screens only enough to keep content usable */
+@media(max-width:480px){
+  #gate{padding:10px 6px 20px !important}
+  #gate .magic-stage{padding:10px !important}
+  #gate .magic-card{min-height:480px !important;padding:34px 17px !important;border-radius:34px !important}
+  #gate .gate-title{font-size:clamp(29px,8.5vw,42px) !important}
+  #gate .open-btn{min-width:82vw;padding:16px 18px !important}
+}
+
 </style>
 
 </head>
@@ -387,6 +626,44 @@ const c=document.getElementById("stars"),x=c.getContext("2d");let W,H,S=[];
 function size(){W=c.width=innerWidth*devicePixelRatio;H=c.height=innerHeight*devicePixelRatio;S=Array.from({length:130},()=>({x:Math.random()*W,y:Math.random()*H,r:(.4+Math.random()*1.5)*devicePixelRatio,a:.2+Math.random()*.8,v:.003+Math.random()*.008}))}
 function loop(){x.clearRect(0,0,W,H);for(const s of S){s.a+=s.v;if(s.a>1||s.a<.18)s.v*=-1;x.globalAlpha=s.a*.6;x.fillStyle=Math.random()>.82?"#ffd66b":"#fff";x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fill()}requestAnimationFrame(loop)}
 addEventListener("resize",size);size();loop();
+
+/* Premium four-side magical fire particles */
+(function(){
+  const gate=document.getElementById("gate");
+  if(!gate) return;
+  const colors=["#ffd34e","#ff9d18","#ff5b24","#ff4fa3","#7b5cff","#32e7ff","#ffffff"];
+  const sides=["top","right","bottom","left"];
+  for(let i=0;i<72;i++){
+    const p=document.createElement("i");
+    const side=sides[i%4];
+    const color=colors[i%colors.length];
+    p.className="premium-fire";
+    p.style.cssText=`
+      position:absolute;z-index:2;pointer-events:none;
+      width:${3+Math.random()*7}px;height:${9+Math.random()*20}px;
+      border-radius:70% 30% 65% 35%;
+      background:radial-gradient(ellipse at 50% 80%,#fff 0 8%,${color} 32%,transparent 78%);
+      filter:blur(${Math.random()*.5}px);
+      box-shadow:0 0 10px ${color},0 0 24px ${color};
+      ${side==="top"?"top:"+(-3+Math.random()*5)+"%;left:"+Math.random()*96+"%;":""}
+      ${side==="bottom"?"bottom:"+(-3+Math.random()*5)+"%;left:"+Math.random()*96+"%;":""}
+      ${side==="left"?"left:"+(-3+Math.random()*5)+"%;top:"+Math.random()*96+"%;":""}
+      ${side==="right"?"right:"+(-3+Math.random()*5)+"%;top:"+Math.random()*96+"%;":""}
+      animation:premiumFire ${1.5+Math.random()*2.5}s ease-in-out ${-Math.random()*3}s infinite;
+    `;
+    gate.querySelector(".magic-stage").appendChild(p);
+  }
+  const st=document.createElement("style");
+  st.textContent=`
+    @keyframes premiumFire{
+      0%,100%{transform:translate(0,0) scale(.65) rotate(-10deg);opacity:.25}
+      45%{transform:translate(${Math.random()*12-6}px,${Math.random()*-16-4}px) scale(1.15) rotate(12deg);opacity:1}
+      70%{transform:translate(${Math.random()*16-8}px,${Math.random()*-25-5}px) scale(.8) rotate(-8deg);opacity:.55}
+    }
+  `;
+  document.head.appendChild(st);
+})();
+
 </script>
 </body>
 </html>
