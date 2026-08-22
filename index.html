@@ -100,8 +100,8 @@ canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:no
  color:#fff;background:linear-gradient(135deg,#ff9f00,#ff4d8d 48%,#6656e8);
  box-shadow:0 16px 35px #ff638b35,inset 0 2px #fff9;overflow:hidden;transition:.25s
 }
-.open-btn:hover{transform:translateY(-4px) scale(1.03)}
-.open-btn:after{content:"";position:absolute;inset:-30px -80px;background:#fff9;transform:translateX(-130%) rotate(18deg);animation:btnshine 3s infinite}
+.open-btn{position:relative;z-index:5;cursor:pointer;touch-action:manipulation}.open-btn:hover{transform:translateY(-4px) scale(1.03)}
+.open-btn:after{pointer-events:none;z-index:0;content:"";position:absolute;inset:-30px -80px;background:#fff9;transform:translateX(-130%) rotate(18deg);animation:btnshine 3s infinite}
 @keyframes btnshine{65%,100%{transform:translateX(130%) rotate(18deg)}}
 .small{margin-top:13px;color:#9aa5b5;font-size:10px}
 
@@ -188,7 +188,7 @@ padding:11px 17px;border-radius:99px;background:#202a3a;color:#fff;font-size:12p
         <div class="mini">আজকের জন্য একটি বিশেষ উপহার</div>
         <h1 class="gate-title">আজকের শুভেচ্ছা<br>আপনার জন্য অপেক্ষায়</h1>
         <p class="gate-text">একটি স্পর্শে খুলে যাবে আজকের উৎসবের মায়াবী শুভেচ্ছা—ভালোবাসার একটি সুন্দর বার্তা, শুধু আপনার জন্য।</p>
-        <button id="open" class="open-btn">✨ শুভেচ্ছা প্রকাশ করুন ✨</button>
+        <button id="open" class="open-btn" type="button" aria-label="শুভেচ্ছা প্রকাশ করুন">✨ শুভেচ্ছা প্রকাশ করুন ✨</button>
         <div class="small">একটি ছোট্ট স্পর্শ • একটি সুন্দর মুহূর্ত</div>
       </div>
     </div>
@@ -297,11 +297,22 @@ document.getElementById("festival").textContent=f.n;
 document.getElementById("sender").textContent=from?`${from}-এর পক্ষ থেকে 💖`:"আপনার জন্য বিশেষ শুভেচ্ছা 💖";
 document.getElementById("poem").innerHTML=f.p[idx];
 
-document.getElementById("open").onclick=()=>{
- document.getElementById("gate").classList.add("hidden");
- document.getElementById("gift").classList.remove("hidden");
- burst();
-};
+const openBtn=document.getElementById("open");
+const gate=document.getElementById("gate");
+const gift=document.getElementById("gift");
+
+function revealWish(){
+  gate.classList.add("hidden");
+  gift.classList.remove("hidden");
+  window.scrollTo({top:0,behavior:"smooth"});
+  burst();
+}
+
+openBtn.addEventListener("click",revealWish);
+openBtn.addEventListener("touchend",(e)=>{
+  e.preventDefault();
+  revealWish();
+},{passive:false});
 
 const name=document.getElementById("name"),wa=document.getElementById("wa");
 name.addEventListener("input",()=>{
