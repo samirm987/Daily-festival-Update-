@@ -137,6 +137,29 @@ button{cursor:pointer}
   .heroWish{padding:27px 12px 22px}.section{padding:18px}
 }
 </style>
+
+<style id="ultra-overrides">
+:root{--gold:#ffd45f;--cyan:#4de8ff;--pink:#ff4fcf;--violet:#8d6bff}
+body{background:radial-gradient(circle at 50% -10%,rgba(117,72,255,.24),transparent 34%),radial-gradient(circle at 0 65%,rgba(0,221,255,.12),transparent 28%),radial-gradient(circle at 100% 70%,rgba(255,55,191,.12),transparent 28%),linear-gradient(135deg,#03020b,#09051c 48%,#020711);}
+.wrap{max-width:1020px}
+.topbar{padding:7px 4px}
+.brand{font-size:13px;text-shadow:0 0 18px rgba(255,212,95,.35)}
+.badge{box-shadow:inset 0 1px rgba(255,255,255,.18),0 10px 30px rgba(0,0,0,.2)}
+.gateCard{background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.025) 50%,rgba(70,38,150,.10));box-shadow:0 40px 120px rgba(0,0,0,.65),0 0 80px rgba(103,74,255,.12),inset 0 1px rgba(255,255,255,.3);}
+.gateCard:before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.08) 42%,transparent 62%);transform:translateX(-100%);animation:glassSweep 5s ease-in-out infinite;pointer-events:none}
+@keyframes glassSweep{50%,100%{transform:translateX(120%)}}
+.magicIcon{box-shadow:0 0 25px rgba(255,212,95,.6),0 0 70px rgba(141,107,255,.42),inset 0 2px 8px #fff}
+.gateTitle{font-weight:900;letter-spacing:-.8px;text-shadow:0 8px 30px rgba(0,0,0,.25)}
+.magicBtn{padding:17px 31px;box-shadow:0 18px 45px rgba(255,79,207,.28),0 0 0 1px rgba(255,255,255,.18),inset 0 2px rgba(255,255,255,.8)}
+.heroWish{background:linear-gradient(145deg,rgba(24,8,56,.92),rgba(4,27,47,.88));box-shadow:0 35px 100px rgba(0,0,0,.58),inset 0 1px rgba(255,255,255,.2)}
+.heroWish:after{content:"";position:absolute;inset:1px;border-radius:31px;background:linear-gradient(125deg,rgba(255,255,255,.08),transparent 35%,transparent 70%,rgba(77,232,255,.08));pointer-events:none}
+.festivalName{font-weight:900;text-shadow:0 0 35px rgba(255,79,207,.16)}
+.wishText{box-shadow:inset 0 1px rgba(255,255,255,.16),0 20px 50px rgba(0,0,0,.22)}
+.section{box-shadow:0 25px 70px rgba(0,0,0,.34),inset 0 1px rgba(255,255,255,.12)}
+.shareBtn{box-shadow:0 14px 35px rgba(53,231,255,.25),inset 0 2px rgba(255,255,255,.75)}
+.miniCard{box-shadow:inset 0 1px rgba(255,255,255,.12),0 15px 35px rgba(0,0,0,.18)}
+@media(max-width:620px){.gateCard{padding:42px 16px}.gateTitle{font-size:34px}.gateSub{font-size:14px}.wishText{font-size:18px}}
+</style>
 </head>
 <body>
 <div class="page">
@@ -144,17 +167,17 @@ button{cursor:pointer}
 
   <main class="wrap">
     <div class="topbar">
-      <div class="brand">✨ মায়াবী শুভেচ্ছা</div>
-      <div class="badge">প্রতিদিন নতুন শুভেচ্ছা</div>
+      <div class="brand">✨ শুভেচ্ছার মায়াবী মুহূর্ত</div>
+      <div class="badge">প্রতিদিন নতুন আনন্দ</div>
     </div>
 
     <section id="gate" class="magicGate">
       <div class="gateCard">
         <div class="magicIcon">✨</div>
-        <div class="gateKicker">একটি ছোট্ট জাদুর দরজা</div>
-        <h1 class="gateTitle">আহা… ক্লিক করে দেখুন! 💫</h1>
-        <p class="gateSub">এই সুন্দর জাদুর আড়ালে আজকের দিনের জন্য একটি বিশেষ শুভেচ্ছা লুকিয়ে আছে। দরজাটি খুললেই আজকের উৎসবের শুভেচ্ছা প্রকাশ হবে।</p>
-        <button class="magicBtn" id="openMagic">✨ জাদুর শুভেচ্ছা খুলুন ✨</button>
+        <div class="gateKicker">আজকের আনন্দের গোপন দরজা</div>
+        <h1 class="gateTitle">আজকের বিশেষ শুভেচ্ছা আবিষ্কার করুন ✨</h1>
+        <p class="gateSub">আজকের পবিত্র দিনটির জন্য একটি বিশেষ বার্তা লুকিয়ে আছে। দরজাটি খুললেই প্রকাশ পাবে আজকের উৎসবের শুভেচ্ছা—আপনার প্রিয় মানুষের কাছে পাঠানোর মতো একেবারে ব্যক্তিগত একটি মায়াবী মুহূর্ত।</p>
+        <button class="magicBtn" id="openMagic">🌟 আজকের শুভেচ্ছা প্রকাশ করুন 🌟</button>
       </div>
     </section>
 
@@ -167,8 +190,8 @@ button{cursor:pointer}
       </div>
 
       <section class="section">
-        <h3 class="sectionTitle">💌 নিজের নাম দিয়ে শুভেচ্ছাটি পাঠান</h3>
-        <p class="help">আপনার নাম লিখলেই WhatsApp শেয়ার বাটন চালু হবে। তারপর বন্ধুর কাছে লিংকটি পাঠিয়ে দিন—বন্ধু লিংক খুললে আপনার নামের পক্ষ থেকেই শুভেচ্ছাটি দেখাবে।</p>
+        <h3 class="sectionTitle">💌 আপনার নাম থেকে শুভেচ্ছা পাঠান</h3>
+        <p class="help">আপনার নাম লিখুন। প্রতিবার WhatsApp-এ পাঠানোর সময় সিস্টেম নিজে থেকে একটি নতুন উৎসব-সম্পর্কিত শায়েরি বেছে নেবে। বন্ধু লিংক খুললেই আপনার নামের পক্ষ থেকে সেই বিশেষ বার্তাটি দেখাবে।</p>
         <div class="nameRow">
           <input class="nameInput" id="senderName" type="text" maxlength="40" placeholder="আপনার নাম লিখুন...">
           <button class="shareBtn" id="shareBtn" disabled>💚 WhatsApp-এ পাঠান</button>
@@ -306,6 +329,41 @@ const FESTIVALS = {
   }
 };
 
+const SHAYARI_VARIANTS={
+  puja:[
+    "মায়ের আশীর্বাদের আলোয় মুছে যাক জীবনের সব অন্ধকার,\nসুখ, শান্তি আর ভালোবাসায় ভরে উঠুক তোমার সংসার। 🌺✨",
+    "ভক্তির ফুলে সাজুক মন, প্রার্থনায় ভরে উঠুক প্রাণ,\nঈশ্বরের কৃপায় পূর্ণ হোক তোমার প্রতিটি সুন্দর স্বপ্ন আর সম্মান। 🙏🌸",
+    "আজকের পবিত্র দিনে একটি প্রার্থনা শুধু তোমার তরে—\nসুখ যেন থাকে পাশে, আর দুঃখ হারিয়ে যায় দূর অন্ধকার ঘরে। 🪔💖",
+    "আশীর্বাদের ছায়া থাকুক মাথার উপর সারাক্ষণ,\nহাসিতে ভরে উঠুক তোমার আজ, আগামীকাল আর প্রতিটি ক্ষণ। ✨"
+  ],
+  family:[
+    "রক্তের বন্ধন নয় শুধু, মনের টানেই সম্পর্ক অমলিন,\nতোমার জীবনে প্রিয় মানুষগুলো থাকুক চিরকাল রঙিন। ❤️",
+    "দূরত্ব যতই বাড়ুক, ভালোবাসা যেন না যায় কমে,\nপ্রিয়জনের হাসি থাকুক তোমার জীবনের প্রতিটি মুহূর্তের সঙ্গী হয়ে। 💖",
+    "একটি ছোট্ট শুভেচ্ছা, তবু তার মাঝে অনেক মায়া,\nপ্রিয় মানুষের মুখে হাসি থাকুক—এই তো মনের চাওয়া। 🌸"
+  ],
+  light:[
+    "একটি প্রদীপের আলো যেমন রাতকে করে আলোকিত,\nতেমনি তোমার জীবন হোক সুখ আর ভালোবাসায় দীপ্ত। 🪔✨",
+    "আলো ছড়িয়ে যাক ঘরে, আলো জ্বলে উঠুক মনে,\nসব অন্ধকার হারিয়ে যাক নতুন আশার ক্ষণে। 💫",
+    "আকাশজুড়ে যত আলো, তত স্বপ্ন ফুটুক প্রাণে,\nআজকের উৎসবের আনন্দ থাকুক সারাবছর তোমার টানে। ✨❤️"
+  ],
+  joy:[
+    "হাসির রঙে রাঙুক দিন, আনন্দে ভরে উঠুক মন,\nআজকের এই শুভক্ষণ হয়ে থাকুক স্মৃতির সবচেয়ে সুন্দর ক্ষণ। 🎉💖",
+    "আজকের আনন্দ ছুঁয়ে যাক তোমার হৃদয়ের প্রতিটি কোণ,\nসুখের গল্পে ভরে উঠুক তোমার আগামী প্রতিটি দিন। 🌟",
+    "নতুন দিনের নতুন আলোয় নতুন স্বপ্ন জাগুক,\nতোমার জীবনের প্রতিটি পথে সাফল্যের ফুল ফুটুক। 🌸✨"
+  ]
+};
+function shayariType(f){
+ const n=(f.name||"").toLowerCase();
+ if(/রাখি|ভাই ফোঁটা/.test(n))return 'family';
+ if(/কালী|দীপাবলি|লক্ষ্মী|মহালয়া|দুর্গা|জগদ্ধাত্রী/.test(n))return 'light';
+ if(/সরস্বতী|শিবরাত্রি|রথ|জন্মাষ্টমী|গণেশ|বিশ্বকর্মা|পূজা|পুত্রদা/.test(n))return 'puja';
+ return 'joy';
+}
+function getShayari(f,index){
+ const arr=SHAYARI_VARIANTS[shayariType(f)]||SHAYARI_VARIANTS.joy;
+ return arr[((index%arr.length)+arr.length)%arr.length];
+}
+
 const DEFAULT_WISH = {
   name:"আজকের সুন্দর দিন",
   tag:"আপনার জন্য একটি মায়াবী শুভেচ্ছা",
@@ -329,6 +387,11 @@ function getSender(){
   const p=new URLSearchParams(location.search);
   return (p.get("from")||"").trim().slice(0,40);
 }
+function getShayariIndex(){
+  const p=new URLSearchParams(location.search);
+  const n=parseInt(p.get("s"),10);
+  return Number.isFinite(n)?n:-1;
+}
 function dateLabel(d){
   return `${bnDigits(d.getDate())} ${bnMonths[d.getMonth()]} ${bnDigits(d.getFullYear())}`;
 }
@@ -337,12 +400,14 @@ function escapeHtml(s){
 }
 function personalize(){
   const festival=getFestival(), sender=getSender();
+  const idx=getShayariIndex();
+  const poem=idx>=0 ? getShayari(festival,idx) : getShayari(festival,Math.floor(Math.random()*4));
   const wish = sender
-    ? `<span class="sender">${escapeHtml(sender)}</span>-এর পক্ষ থেকে আপনার জন্য আজকের এই বিশেষ শুভেচ্ছা।<br><span class="heart">“${escapeHtml(festival.wish)}”</span>`
-    : `<span class="heart">“${escapeHtml(festival.wish)}”</span>`;
+    ? `<span class="sender">${escapeHtml(sender)}</span>-এর পক্ষ থেকে আপনার জন্য 💖<br><span class="heart">“${escapeHtml(poem)}”</span>`
+    : `<span class="heart">“${escapeHtml(poem)}”</span>`;
   document.getElementById("festivalName").textContent=festival.name;
   document.getElementById("festivalTag").textContent=festival.tag;
-  document.getElementById("wishText").innerHTML=wish;
+  document.getElementById("wishText").innerHTML=wish.replace(/\n/g,"<br>");
   document.getElementById("todayText").textContent=dateLabel(getToday().date);
 }
 function confetti(){
@@ -367,9 +432,10 @@ function openWish(){
   confetti();
   setTimeout(()=>document.getElementById("wishArea").scrollIntoView({behavior:"smooth",block:"start"}),100);
 }
-function makeShareUrl(name){
+function makeShareUrl(name,index){
   const url=new URL(location.href);
   url.searchParams.set("from",name.trim());
+  url.searchParams.set("s",String(index));
   return url.href;
 }
 function updateShare(){
@@ -386,8 +452,13 @@ function updateShare(){
 function shareWhatsApp(){
   const name=document.getElementById("senderName").value.trim();
   if(!name){showToast("আগে আপনার নাম লিখুন ✨");return}
-  const f=getFestival(),url=makeShareUrl(name);
-  const message=`হ্যালো 👋\n${name}-এর পক্ষ থেকে আপনার জন্য ${f.name}-এর একটি সুন্দর শুভেচ্ছা এসেছে। 💖\n\n✨ শুভেচ্ছাটি দেখতে নিচের লিংকে ক্লিক করুন:\n${url}`;
+  const f=getFestival();
+  const pool=SHAYARI_VARIANTS[shayariType(f)]||SHAYARI_VARIANTS.joy;
+  let index=Math.floor(Math.random()*pool.length);
+  const current=getShayariIndex();
+  if(pool.length>1 && index===current) index=(index+1)%pool.length;
+  const url=makeShareUrl(name,index);
+  const message=`হ্যালো 👋\n${name}-এর পক্ষ থেকে আপনার জন্য ${f.name}-এর একটি বিশেষ শুভেচ্ছা এসেছে। 💖\n\n✨ আপনার জন্য একটি মায়াবী শুভেচ্ছা অপেক্ষা করছে—লিংকে ক্লিক করে দেখুন:\n${url}`;
   location.href="https://wa.me/?text="+encodeURIComponent(message);
 }
 document.getElementById("openMagic").addEventListener("click",openWish);
